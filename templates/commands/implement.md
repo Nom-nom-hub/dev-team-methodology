@@ -44,47 +44,47 @@ Given that implementation focus, do this:
 
 1. **Determine current implementation phase and status**:
 
-    - Check tasks.md for which tasks are marked "To Do" vs "In Progress" vs "Done"
-    - Identify the first uncompleted task(s) to start with
-    - Review the status section to understand current progress
-    
+   - Check tasks.md for which tasks are marked "To Do" vs "In Progress" vs "Done"
+   - Identify the first uncompleted task(s) to start with
+   - Review the status section to understand current progress
+
 2. **Execute the next actionable tasks in priority order**:
 
-    a. **If Research & Design Phase tasks remain (RD001-RD006)**:
-    
-    - START with the first "To Do" research task
-    - ACTUALLY PERFORM the research (not just document it)
-    - Document findings in research.md
-    - Update task status to "Done" when complete
-    - MOVE TO NEXT research task
-    - Only move to Implementation Phase when all P1 research tasks are "Done"
-    
-    b. **If Implementation Phase tasks are ready (IMPL001-IMPL014)**:
-    
-    - START with IMPL001 (Project Setup) - create actual project structure, directories
-    - CREATE code files and implement functionality (don't just plan it)
-    - Follow the implementation approach from plan.md
-    - Work collaboratively: Developer implements, UX validates design, QA prepares tests
-    - Update code files with actual implementation
-    - Update task status to "In Progress" when starting, "Done" when complete
-    - MOVE TO NEXT implementation task
-    - Do NOT claim tasks are "done" without creating/modifying actual code
-    
-    c. **If Testing Phase tasks are ready (TEST001-TEST008)**:
-    
-    - QA executes comprehensive testing plan from tasks.md
-    - Create test files and test code (actual test implementations, not just plans)
-    - Run tests against implementations
-    - Document test results
-    - Update task status as tests complete
-    - Do NOT claim testing is done without actual test code and results
-    
-    d. **If Deployment Phase tasks are ready (DEPLOY001-DEPLOY005)**:
-    
-    - DevOps executes deployment following established procedures
-    - Create packaging and installation artifacts
-    - Test the installation process
-    - Update task status as deployment completes
+   a. **If Research & Design Phase tasks remain (RD001-RD006)**:
+
+   - START with the first "To Do" research task
+   - ACTUALLY PERFORM the research (not just document it)
+   - Document findings in research.md
+   - Update task status to "Done" when complete
+   - MOVE TO NEXT research task
+   - Only move to Implementation Phase when all P1 research tasks are "Done"
+
+   b. **If Implementation Phase tasks are ready (IMPL001-IMPL014)**:
+
+   - START with IMPL001 (Project Setup) - create actual project structure, directories
+   - CREATE code files and implement functionality (don't just plan it)
+   - Follow the implementation approach from plan.md
+   - Work collaboratively: Developer implements, UX validates design, QA prepares tests
+   - Update code files with actual implementation
+   - Update task status to "In Progress" when starting, "Done" when complete
+   - MOVE TO NEXT implementation task
+   - Do NOT claim tasks are "done" without creating/modifying actual code
+
+   c. **If Testing Phase tasks are ready (TEST001-TEST008)**:
+
+   - QA executes comprehensive testing plan from tasks.md
+   - Create test files and test code (actual test implementations, not just plans)
+   - Run tests against implementations
+   - Document test results
+   - Update task status as tests complete
+   - Do NOT claim testing is done without actual test code and results
+
+   d. **If Deployment Phase tasks are ready (DEPLOY001-DEPLOY005)**:
+
+   - DevOps executes deployment following established procedures
+   - Create packaging and installation artifacts
+   - Test the installation process
+   - Update task status as deployment completes
 
 1. **Maintain team communication and coordination**:
 

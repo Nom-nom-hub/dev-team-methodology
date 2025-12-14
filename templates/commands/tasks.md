@@ -203,28 +203,36 @@ Document dependencies between:
 **Each task MUST be actionable and specific:**
 
 1. **Research & Design Tasks**:
+
    - Must specify WHAT research to conduct (not "do research")
    - Must describe WHERE findings go (research.md)
    - Must define HOW results will be documented
-   - Example: "Research tree-sitter library: evaluate features, performance, language support. Document in research.md with findings on pros/cons."
+   - Example: "Research tree-sitter library: evaluate features, performance, language support. Document in
+     research.md with findings on pros/cons."
 
 2. **Implementation Tasks**:
+
    - Must specify WHAT code to create (not "implement feature")
    - Must describe WHERE code goes (file path/directory structure)
    - Must define WHAT the code should do (acceptance criteria)
-   - Example: "Create src/parsers/javascript_parser.py - implement JSParser class with parse() method that returns AST structure per spec requirements"
+   - Example: "Create src/parsers/javascript_parser.py - implement JSParser class with parse() method that
+     returns AST structure per spec requirements"
 
 3. **Testing Tasks**:
+
    - Must specify WHAT to test (not "test the feature")
    - Must describe WHERE tests go (test file paths)
    - Must define HOW success is measured (test assertions)
-   - Example: "Create tests/test_javascript_parser.py - write unit tests for parse() method covering 5+ scenarios"
+   - Example: "Create tests/test_javascript_parser.py - write unit tests for parse() method covering 5+
+     scenarios"
 
 4. **Deployment Tasks**:
+
    - Must specify WHAT to deploy (artifact/package)
    - Must describe HOW deployment happens (process steps)
    - Must define validation criteria
-   - Example: "Create setup.py and pyproject.toml - package tool for pip distribution, test installation in clean environment"
+   - Example: "Create setup.py and pyproject.toml - package tool for pip distribution, test installation in
+     clean environment"
 
 **Tasks should NOT be vague or aspirational:**
 

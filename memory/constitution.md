@@ -85,4 +85,3 @@ All PRs/reviews must verify constitutional compliance from all relevant team per
 multiple personas. Use [TEAM_GUIDANCE_FILE] for runtime development guidance from all team perspectives.
 
 **Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-"# Trigger release" 
