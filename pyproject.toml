@@ -52,7 +52,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [project.urls]
-Homepage = "https://github.com/user/dev-team-methodology"
-Repository = "https://github.com/user/dev-team-methodology.git"
-"Bug Tracker" = "https://github.com/user/dev-team-methodology/issues"
-Documentation = "https://github.com/user/dev-team-methodology#readme"
+Homepage = "https://github.com/Nom-nom-hub/dev-team-methodology"
+Repository = "https://github.com/Nom-nom-hub/dev-team-methodology.git"
+"Bug Tracker" = "https://github.com/Nom-nom-hub/dev-team-methodology/issues"
+Documentation = "https://github.com/Nom-nom-hub/dev-team-methodology#readme"

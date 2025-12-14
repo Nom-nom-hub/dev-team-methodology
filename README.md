@@ -14,10 +14,10 @@
         <img src="https://github.com/Nom-nom-hub/dev-team-methodology/actions/workflows/release.yml/badge.svg" alt="Release"/>
     </a>
     <a href="https://github.com/Nom-nom-hub/dev-team-methodology/stargazers">
-        <img src="https://img.shields.io/github/stars/user/dev-team-methodology?style=social" alt="GitHub stars"/>
+        <img src="https://img.shields.io/github/stars/Nom-nom-hub/dev-team-methodology?style=social" alt="GitHub stars"/>
     </a>
     <a href="https://github.com/Nom-nom-hub/dev-team-methodology/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/user/dev-team-methodology" alt="License"/>
+        <img src="https://img.shields.io/github/license/Nom-nom-hub/dev-team-methodology" alt="License"/>
     </a>
     <a href="https://github.github.io/dev-team-methodology/">
         <img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Documentation"/>

@@ -636,7 +636,7 @@ def merge_json_files(existing_path: Path, new_content: dict, verbose: bool = Fal
     return merged
 
 def download_template_from_github(ai_assistant: str, download_dir: Path, *, script_type: str = "sh", verbose: bool = True, show_progress: bool = True, client: httpx.Client = None, debug: bool = False, github_token: str = None) -> Tuple[Path, dict]:
-    repo_owner = "user"  # Using user as placeholder for the team methodology
+    repo_owner = "Nom-nom-hub"  # Using actual repository owner
     repo_name = "dev-team-methodology"
     if client is None:
         client = httpx.Client(verify=ssl_context)
@@ -1311,7 +1311,7 @@ def version():
             pass
 
     # Fetch latest template release version
-    repo_owner = "user"
+    repo_owner = "Nom-nom-hub"
     repo_name = "dev-team-methodology"
     api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases/latest"
 
