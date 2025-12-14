@@ -691,7 +691,7 @@ rm gcm-linux_amd64.2.6.1.deb
 
 ## 👥 Maintainers
 
-- [Your Name] ([@your-handle](https://github.com/your-handle))
+- [Teck] ([@Nom-nom-hub](https://github.com/your-handle))
 
 ## 💬 Support
 
