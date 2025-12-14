@@ -37,7 +37,7 @@ curl -L \
   https://api.github.com/repos/$GITHUB_REPOSITORY/releases \
   -d "{
     \"tag_name\":\"$NEW_VERSION\",
-    \"target_commitish\":\"main\",
+    \"target_commitish\":\"master\",
     \"name\":\"$NEW_VERSION\",
     \"body\":\"$ESCAPED_NOTES\",
     \"draft\":false,
