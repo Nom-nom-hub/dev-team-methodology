@@ -239,7 +239,7 @@ A task is "Done" ONLY when:
 
 ## Workflow Validation Map
 
-```
+```text
 START
   ↓
 /team.specify ← Prerequisites: None
@@ -275,7 +275,7 @@ MERGE TO MAIN
 
 ## Quick Reference: File Locations
 
-```
+```text
 specs/
 ├── [FEATURE]/                          ← Feature directory
 │   ├── spec.md                        ← Specification (required for all phases)

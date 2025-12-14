@@ -12,7 +12,7 @@ scripts:
 
 ## Prerequisites
 
-- **Files Required**: 
+- **Files Required**:
   - `specs/[FEATURE]/spec.md` (completed specification)
   - `specs/[FEATURE]/checklists/team-validation-checklist.md` (review complete with all items passing)
 - **Branch Required**: Feature branch checked out

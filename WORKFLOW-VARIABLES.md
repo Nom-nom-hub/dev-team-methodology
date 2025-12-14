@@ -6,7 +6,7 @@ All team methodology commands use a consistent variable naming pattern:
 
 ### Feature Identifier Pattern
 
-```
+```text
 [FEATURE-NUMBER]-[FEATURE-NAME]
 ```
 
@@ -37,7 +37,7 @@ In templates, use these standard variables:
 
 ### Directory Structure
 
-```
+```text
 specs/
 ├── 001-user-auth/
 │   ├── spec.md
@@ -196,19 +196,20 @@ Before proceeding to the next phase, verify:
 
 ## Critical Notes for AI Agents
 
-1. **Always verify prerequisites** before starting a command. If required files don't exist, stop and report missing prerequisites.
+1. **Always verify prerequisites** before starting a command. If required files don't exist, stop and report
+   missing prerequisites.
 
-2. **Variable substitution** in command templates:
+1. **Variable substitution** in command templates:
    - Templates use `[FEATURE]`, `[FEATURE-NUMBER]`, `[FEATURE-NAME]`
    - Replace these with actual values extracted from current branch or user input
    - Example: If on branch `001-user-auth`, use `specs/001-user-auth/` as the directory
 
-3. **File path consistency**:
+1. **File path consistency**:
    - Always use absolute paths in directory operations
    - Use forward slashes in examples, backslashes on Windows
    - Reference files relative to spec directory: `specs/[FEATURE]/`
 
-4. **Task type distinctions**:
+1. **Task type distinctions**:
    - Research tasks: Document findings, not just "do research"
    - Implementation tasks: Create code files, not just "implement"
    - Testing tasks: Write test code, not just "create tests"

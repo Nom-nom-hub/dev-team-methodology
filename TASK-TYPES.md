@@ -2,7 +2,8 @@
 
 ## Overview
 
-Task definitions must be specific and actionable, with different requirements for each task type. Use these templates when generating tasks in `/team.tasks`.
+Task definitions must be specific and actionable, with different requirements for each task type. Use these
+templates when generating tasks in `/team.tasks`.
 
 ---
 
@@ -30,11 +31,18 @@ Investigate, evaluate, and document findings that inform design and implementati
 ### Examples
 
 ✓ **Good (Specific)**:
-- "Research tree-sitter parsing library: evaluate parsing speed on 100+ language files, language coverage, memory usage, maintenance status. Document in research.md with comparison table (features vs. alternatives), benchmarks, and recommendation."
-- "Research OAuth2 providers: evaluate Google/GitHub/Microsoft/Auth0 on setup complexity, pricing, security features, user adoption. Document in research.md with comparison matrix and recommendation."
-- "Investigate database design: evaluate normalized vs. document-based schema for user profiles with nested preferences. Document in research.md with schema options, query performance implications, and recommendation."
+
+- "Research tree-sitter parsing library: evaluate parsing speed on 100+ language files, language coverage,
+  memory usage, maintenance status. Document in research.md with comparison table (features vs.
+  alternatives), benchmarks, and recommendation."
+- "Research OAuth2 providers: evaluate Google/GitHub/Microsoft/Auth0 on setup complexity, pricing,
+  security features, user adoption. Document in research.md with comparison matrix and recommendation."
+- "Investigate database design: evaluate normalized vs. document-based schema for user profiles with
+  nested preferences. Document in research.md with schema options, query performance implications, and
+  recommendation."
 
 ✗ **Bad (Vague)**:
+
 - "Research parsing libraries"
 - "Investigate database options"
 - "Evaluate authentication approaches"
@@ -75,11 +83,19 @@ Create code files, implement features, and build functionality according to the 
 ### Examples
 
 ✓ **Good (Specific)**:
-- "Create src/parsers/javascript_parser.py: Implement JSParser class with parse(file_path) method that returns AST structure per spec. Must handle syntax errors gracefully and support ES6+ features. Acceptance: Parser successfully parses 100+ real JavaScript files without exceptions."
-- "Create src/api/user_routes.py: Implement Flask routes for /users GET/POST/PUT/DELETE endpoints with authentication, validation, error handling. Acceptance: All 4 endpoints handle valid/invalid inputs per OpenAPI spec."
-- "Create src/cli/analyze.py: Implement AnalyzeCLI class with --format json/yaml support, --output file parameter, and progress reporting. Acceptance: CLI runs without errors on 3 different codebases, produces valid JSON/YAML."
+
+- "Create src/parsers/javascript_parser.py: Implement JSParser class with parse(file_path) method
+  that returns AST structure per spec. Must handle syntax errors gracefully and support ES6+ features.
+  Acceptance: Parser successfully parses 100+ real JavaScript files without exceptions."
+- "Create src/api/user_routes.py: Implement Flask routes for /users GET/POST/PUT/DELETE endpoints with
+  authentication, validation, error handling. Acceptance: All 4 endpoints handle valid/invalid inputs per
+  OpenAPI spec."
+- "Create src/cli/analyze.py: Implement AnalyzeCLI class with --format json/yaml support, --output file
+  parameter, and progress reporting. Acceptance: CLI runs without errors on 3 different codebases,
+  produces valid JSON/YAML."
 
 ✗ **Bad (Vague)**:
+
 - "Implement parser functionality"
 - "Create API endpoints"
 - "Build CLI interface"
@@ -121,11 +137,19 @@ Write test code, execute tests against implementations, and document test result
 ### Examples
 
 ✓ **Good (Specific)**:
-- "Create tests/test_javascript_parser.py: Write 12 unit tests for JSParser.parse() covering valid JS files, syntax errors, empty files, ES6 features, nested structures, and edge cases. Acceptance: 100% code coverage on parser module, all tests pass in CI."
-- "Create tests/test_user_api.py: Write 20 integration tests for user endpoints (/users GET, POST, PUT, DELETE) covering success cases, validation errors, auth failures, concurrent requests. Acceptance: 90%+ coverage on api module, tests complete in <5 seconds."
-- "Create tests/test_cli.py: Write 8 e2e tests for analyze CLI command with different --format/--output options, missing files, invalid input. Acceptance: All tests pass against real test codebases, coverage >85%."
+
+- "Create tests/test_javascript_parser.py: Write 12 unit tests for JSParser.parse() covering valid JS
+  files, syntax errors, empty files, ES6 features, nested structures, and edge cases. Acceptance: 100%
+  code coverage on parser module, all tests pass in CI."
+- "Create tests/test_user_api.py: Write 20 integration tests for user endpoints (/users GET, POST, PUT,
+  DELETE) covering success cases, validation errors, auth failures, concurrent requests. Acceptance: 90%+
+  coverage on api module, tests complete in <5 seconds."
+- "Create tests/test_cli.py: Write 8 e2e tests for analyze CLI command with different --format/--output
+  options, missing files, invalid input. Acceptance: All tests pass against real test codebases, coverage
+  >85%."
 
 ✗ **Bad (Vague)**:
+
 - "Write tests for parser"
 - "Create API tests"
 - "Test CLI functionality"
@@ -167,11 +191,19 @@ Create packaging artifacts, configure deployment, and validate deployment proces
 ### Examples
 
 ✓ **Good (Specific)**:
-- "Create setup.py and pyproject.toml: Package tool for pip distribution with entry points for CLI commands. Acceptance: Tool installs cleanly in fresh venv, CLI commands run without errors, help text displays correctly."
-- "Create Dockerfile and docker-compose.yml: Package API service with PostgreSQL and Redis. Acceptance: Docker image builds successfully, container starts and serves API on port 8000, docker-compose brings up all services."
-- "Create GitHub Actions workflow: Automate testing on pull requests and deployment to Cloud Run on main branch. Acceptance: Workflow runs tests automatically, builds and deploys on success, sends Slack notifications."
+
+- "Create setup.py and pyproject.toml: Package tool for pip distribution with entry points for CLI
+  commands. Acceptance: Tool installs cleanly in fresh venv, CLI commands run without errors, help text
+  displays correctly."
+- "Create Dockerfile and docker-compose.yml: Package API service with PostgreSQL and Redis. Acceptance:
+  Docker image builds successfully, container starts and serves API on port 8000, docker-compose brings
+  up all services."
+- "Create GitHub Actions workflow: Automate testing on pull requests and deployment to Cloud Run on main
+  branch. Acceptance: Workflow runs tests automatically, builds and deploys on success, sends Slack
+  notifications."
 
 ✗ **Bad (Vague)**:
+
 - "Deploy to production"
 - "Create Docker configuration"
 - "Set up CI/CD"
