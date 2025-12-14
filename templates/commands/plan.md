@@ -1,4 +1,4 @@
----
+###
 description: Create an implementation plan that incorporates team persona input and cross-functional collaboration requirements.
 handoffs:
   - label: Generate Implementation Tasks
@@ -7,7 +7,7 @@ handoffs:
 scripts:
   sh: scripts/bash/setup-plan.sh --json
   ps: scripts/powershell/setup-plan.ps1 -Json
----
+###
 
 ## User Input
 

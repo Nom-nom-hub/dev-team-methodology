@@ -1,9 +1,9 @@
----
+###
 description: Generate actionable implementation tasks with team role assignments and cross-functional dependencies.
 scripts:
   sh: echo "Tasks generated in specs/[BRANCH]/tasks.md"
   ps: echo "Tasks generated in specs/[BRANCH]/tasks.md"
----
+###
 
 ## User Input
 

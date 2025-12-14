@@ -1,9 +1,9 @@
----
+###
 description: Review and validate feature specifications from all team persona perspectives.
 scripts:
   sh: scripts/bash/update-agent-context.sh {ARGS}
   ps: scripts/powershell/update-agent-context.ps1 {ARGS}
----
+###
 
 ## User Input
 

@@ -15,7 +15,7 @@
     <a href="https://github.github.io/dev-team-methodology/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Documentation"/></a>
 </p>
 
----
+####
 
 ## Table of Contents
 
@@ -354,7 +354,7 @@ If you encounter issues with an agent, please open an issue so we can refine the
 - **[Complete Team-Driven Development Methodology](./team-driven.md)** - Deep dive into the full process
 - **[Detailed Walkthrough](#-detailed-process)** - Step-by-step implementation guide
 
----
+####
 
 ## 📋 Detailed Process
 
@@ -668,7 +668,7 @@ Once the implementation is complete, test the application and resolve any runtim
 
 </details>
 
----
+####
 
 ## 🔍 Troubleshooting
 

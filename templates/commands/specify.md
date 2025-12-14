@@ -1,4 +1,4 @@
----
+###
 description: Create or update the team feature specification from a natural language feature description with input from all team personas.
 handoffs:
   - label: Review Specification from Team Perspectives
@@ -10,7 +10,7 @@ handoffs:
 scripts:
   sh: scripts/bash/create-new-feature.sh --json "{ARGS}"
   ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
----
+###
 
 ## User Input
 

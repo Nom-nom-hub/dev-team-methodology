@@ -1,9 +1,9 @@
----
+###
 description: Create or update the project constitution that defines team principles and working agreements.
 scripts:
   sh: echo "Constitution updated in memory/constitution.md"
   ps: echo "Constitution updated in memory/constitution.md"
----
+###
 
 ## User Input
 

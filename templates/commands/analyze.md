@@ -1,9 +1,9 @@
----
+###
 description: Perform cross-artifact consistency and alignment report from all team perspectives.
 scripts:
   sh: echo "Analysis report generated in specs/[BRANCH]/analysis-report.md"
   ps: echo "Analysis report generated in specs/[BRANCH]/analysis-report.md"
----
+###
 
 ## User Input
 

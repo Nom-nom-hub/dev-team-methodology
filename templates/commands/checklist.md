@@ -1,9 +1,9 @@
----
+###
 description: Generate quality checklists to validate requirements completeness, clarity, and consistency from all team perspectives.
 scripts:
   sh: echo "Checklist generated in specs/[BRANCH]/checklists/requirements-checklist.md"
   ps: echo "Checklist generated in specs/[BRANCH]/checklists/requirements-checklist.md"
----
+###
 
 ## User Input
 

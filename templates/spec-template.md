@@ -79,7 +79,7 @@
 - **Developer**: [Validate implementation approach]
 - **DevOps**: [Validate deployment requirements]
 
----
+####
 
 ### User Story 2 - [Brief Title] (Priority: P2)
 
@@ -101,7 +101,7 @@
 - **Developer**: [Validate implementation approach]
 - **DevOps**: [Validate deployment requirements]
 
----
+####
 
 ### User Story 3 - [Brief Title] (Priority: P3)
 
@@ -123,7 +123,7 @@
 - **Developer**: [Validate implementation approach]
 - **DevOps**: [Validate deployment requirements]
 
----
+####
 
 [Add more user stories as needed, each with an assigned priority]
 
@@ -135,9 +135,9 @@
   Include team perspectives on edge cases.
 -->
 
-- What happens when [boundary condition]? **[Team Perspective]**
-- How does system handle [error scenario]? **[Team Perspective]**
-- What if [failure condition]? **[Team Perspective]**
+- What happens when [boundary condition]⚡ **[Team Perspective]**
+- How does system handle [error scenario]⚡ **[Team Perspective]**
+- What if [failure condition]⚡ **[Team Perspective]**
 
 ## Requirements *(mandatory)*
 

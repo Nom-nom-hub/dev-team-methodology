@@ -1,9 +1,9 @@
----
+###
 description: Execute the implementation following the team methodology with cross-functional collaboration.
 scripts:
   sh: echo "Implementation progress tracked in specs/[BRANCH]/implementation-log.md"
   ps: echo "Implementation progress tracked in specs/[BRANCH]/implementation-log.md"
----
+###
 
 ## User Input
 

@@ -1,9 +1,9 @@
----
+###
 description: Ask structured questions to de-risk ambiguous areas before planning from all team perspectives.
 scripts:
   sh: echo "Clarification questions documented in specs/[BRANCH]/clarification-log.md"
   ps: echo "Clarification questions documented in specs/[BRANCH]/clarification-log.md"
----
+###
 
 ## User Input
 
