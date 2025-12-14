@@ -1,8 +1,6 @@
-<div align="center">
-    <img src="./media/logo_large.webp" alt="Dev Team Methodology Logo" width="200" height="200"/>
-    <h1>👥 Professional Dev Team Methodology</h1>
-    <h3><em>Build high-quality software with structured team collaboration.</em></h3>
-</div>
+<h1>👥 Professional Dev Team Methodology</h1>
+
+<h3><em>Build high-quality software with structured team collaboration.</em></h3>
 
 <p align="center">
     <strong>A professional development team methodology that combines specifications
