@@ -210,7 +210,7 @@ Document dependencies between:
    - Example: "Research tree-sitter library: evaluate features, performance, language support. Document in
      research.md with findings on pros/cons."
 
-2. **Implementation Tasks**:
+1. **Implementation Tasks**:
 
    - Must specify WHAT code to create (not "implement feature")
    - Must describe WHERE code goes (file path/directory structure)
@@ -218,7 +218,7 @@ Document dependencies between:
    - Example: "Create src/parsers/javascript_parser.py - implement JSParser class with parse() method that
      returns AST structure per spec requirements"
 
-3. **Testing Tasks**:
+1. **Testing Tasks**:
 
    - Must specify WHAT to test (not "test the feature")
    - Must describe WHERE tests go (test file paths)
@@ -226,7 +226,7 @@ Document dependencies between:
    - Example: "Create tests/test_javascript_parser.py - write unit tests for parse() method covering 5+
      scenarios"
 
-4. **Deployment Tasks**:
+1. **Deployment Tasks**:
 
    - Must specify WHAT to deploy (artifact/package)
    - Must describe HOW deployment happens (process steps)

@@ -48,7 +48,7 @@ Given that implementation focus, do this:
    - Identify the first uncompleted task(s) to start with
    - Review the status section to understand current progress
 
-2. **Execute the next actionable tasks in priority order**:
+1. **Execute the next actionable tasks in priority order**:
 
    a. **If Research & Design Phase tasks remain (RD001-RD006)**:
 
@@ -231,10 +231,10 @@ Given that implementation focus, do this:
 **DO NOT claim a task is "Done" without evidence:**
 
 1. **For Research Tasks**: Document findings in research.md with actual research results, not just "planning to research"
-2. **For Implementation Tasks**: Create actual code files, implement features, and show the working code
-3. **For Testing Tasks**: Write actual test code, run tests, and document results - don't just plan tests
-4. **For Documentation**: Create actual documentation files with content, not empty files
-5. **For Setup Tasks**: Create actual project structure, directories, configuration files - not just plans
+1. **For Implementation Tasks**: Create actual code files, implement features, and show the working code
+1. **For Testing Tasks**: Write actual test code, run tests, and document results - don't just plan tests
+1. **For Documentation**: Create actual documentation files with content, not empty files
+1. **For Setup Tasks**: Create actual project structure, directories, configuration files - not just plans
 
 **Track progress realistically:**
 
