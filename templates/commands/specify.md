@@ -13,6 +13,13 @@ scripts:
   ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
 -->
 
+## Prerequisites
+
+- **Files Required**: None
+- **Branch Required**: None (new feature branch will be created)
+- **Team Roles Required**: All team personas should be available for input
+- **Previous Phase**: None (this is the starting phase)
+
 ## User Input
 
 ```text

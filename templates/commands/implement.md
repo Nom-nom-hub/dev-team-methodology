@@ -5,6 +5,17 @@ scripts:
   ps: echo "Implementation progress tracked in specs/[BRANCH]/implementation-log.md"
 -->
 
+## Prerequisites
+
+- **Files Required**:
+  - `specs/[FEATURE]/spec.md` (completed specification)
+  - `specs/[FEATURE]/plan.md` (completed implementation plan)
+  - `specs/[FEATURE]/tasks.md` (task breakdown with ownership)
+- **Branch Required**: Feature branch checked out
+- **Team Roles Required**: All team personas for implementation collaboration
+- **Previous Phase**: `/team.tasks` must be complete
+- **Important**: Reference TASK-TYPES.md for task completion expectations
+
 ## User Input
 
 ```text

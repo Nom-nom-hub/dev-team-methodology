@@ -10,6 +10,15 @@ scripts:
   ps: scripts/powershell/setup-plan.ps1 -Json
 -->
 
+## Prerequisites
+
+- **Files Required**: 
+  - `specs/[FEATURE]/spec.md` (completed specification)
+  - `specs/[FEATURE]/checklists/team-validation-checklist.md` (review complete with all items passing)
+- **Branch Required**: Feature branch checked out
+- **Team Roles Required**: All team personas for planning input
+- **Previous Phase**: `/team.specify` and `/team.review` must be complete
+
 ## User Input
 
 ```text

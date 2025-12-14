@@ -5,6 +5,16 @@ scripts:
   ps: echo "Tasks generated in specs/[BRANCH]/tasks.md"
 -->
 
+## Prerequisites
+
+- **Files Required**:
+  - `specs/[FEATURE]/spec.md` (completed specification)
+  - `specs/[FEATURE]/plan.md` (completed implementation plan)
+- **Branch Required**: Feature branch checked out
+- **Team Roles Required**: All team personas for task planning
+- **Previous Phase**: `/team.plan` must be complete
+- **Important**: Use TASK-TYPES.md for task structure and examples
+
 ## User Input
 
 ```text

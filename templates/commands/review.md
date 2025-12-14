@@ -5,6 +5,13 @@ scripts:
   ps: scripts/powershell/update-agent-context.ps1 {ARGS}
 -->
 
+## Prerequisites
+
+- **Files Required**: `specs/[FEATURE]/spec.md` (completed specification)
+- **Branch Required**: Feature branch checked out (e.g., `001-user-auth`)
+- **Team Roles Required**: All 6 team personas for validation
+- **Previous Phase**: `/team.specify` must be complete
+
 ## User Input
 
 ```text
