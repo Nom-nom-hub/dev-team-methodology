@@ -47,9 +47,35 @@ jobs:
           .github/workflows/scripts/generate-release-notes.sh ${{ steps.get_tag.outputs.new_version }} ${{ steps.get_tag.outputs.latest_tag }}
       - name: Create GitHub Release
         if: steps.check_release.outputs.exists == 'false'
+        id: create_release
         run: |
           chmod +x .github/workflows/scripts/create-github-release.sh
           .github/workflows/scripts/create-github-release.sh ${{ steps.get_tag.outputs.new_version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload release assets
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          # Install jq for JSON parsing
+          sudo apt-get update && sudo apt-get install -y jq
+
+          # Upload all generated agent template packages as release assets
+          for file in .genreleases/*.zip; do
+            if [ -f "$file" ]; then
+              echo "Uploading $file"
+              # Get the release ID to upload the asset
+              RELEASE_ID=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+                "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/tags/${{ steps.get_tag.outputs.new_version }}" | \
+                jq -r '.id')
+
+              # Upload the asset
+              curl -X POST \
+                -H "Authorization: Bearer $GITHUB_TOKEN" \
+                -H "Content-Type: application/zip" \
+                --data-binary @"$file" \
+                "https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$RELEASE_ID/assets?name=$(basename "$file")"
+            fi
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update version in pyproject.toml (for release artifacts only)
