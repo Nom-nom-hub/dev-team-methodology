@@ -1,0 +1,30 @@
+{
+  "markdownlint-cli2": {
+    "files": [
+      "**/*.md"
+    ],
+    "config": {
+      "default": true,
+      "MD003": {
+        "style": "atx"
+      },
+      "MD013": {
+        "line_length": 120,
+        "code_blocks": false,
+        "tables": false
+      },
+      "MD024": {
+        "siblings_only": true
+      },
+      "MD029": {
+        "style": "one"
+      },
+      "MD033": {
+        "allowed_elements": [
+          "br"
+        ]
+      },
+      "MD041": false
+    }
+  }
+}

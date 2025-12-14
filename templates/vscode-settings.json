@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.mdc": "markdown"
+  },
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.orderedList.marker": "one"
+}

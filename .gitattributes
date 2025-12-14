@@ -1,0 +1,5 @@
+# git attributes
+*.md linguist-detectable
+*.py linguist-detectable
+*.sh linguist-detectable
+*.ps1 linguist-detectable
