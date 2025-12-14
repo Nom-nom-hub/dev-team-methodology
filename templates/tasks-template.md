@@ -185,4 +185,49 @@ execution workflow.
 
 - [Metrics for delivery success]
 
+---
+
+## Task Completion Requirements
+
+### What "Done" Means
+
+**Research & Design Tasks:**
+- Research findings documented in research.md with actual results
+- Design artifacts created (architecture diagrams, specifications, etc.)
+- Team validation completed with all stakeholder sign-offs
+
+**Implementation Tasks:**
+- Code files created and committed to the feature branch
+- Implementation follows the agreed architecture and patterns
+- Code is functional (tested locally or in unit tests)
+- Code follows team standards and quality guidelines
+
+**Testing Tasks:**
+- Test code files created (unit tests, integration tests, etc.)
+- Tests execute against implementations
+- Test results documented with pass/fail status
+- Issues found are tracked and addressed
+
+**Deployment Tasks:**
+- Deployment artifacts created (packages, configurations, etc.)
+- Deployment process tested and validated
+- Operational requirements met and documented
+
+### What is NOT "Done"
+
+✗ Writing a plan to do the work  
+✗ Creating implementation logs that describe what will be done  
+✗ Documenting tasks without completing them  
+✗ Planning a research task without researching  
+✗ Writing a code outline without actual code  
+✗ Describing tests without writing test code  
+
+### Task Status Meanings
+
+- **To Do**: Work has not started
+- **In Progress**: Active work is underway with deliverables being created
+- **Done**: Work is complete with deliverables created and validated
+
+---
+
 **Version**: 1.0 | **Ratified**: [DATE] | **Last Updated**: [DATE]

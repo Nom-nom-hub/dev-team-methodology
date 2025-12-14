@@ -42,37 +42,49 @@ Given that implementation focus, do this:
    - Validate milestone dates and validation points
    - Set up progress tracking mechanisms
 
-1. **Execute implementation according to team methodology**:
+1. **Determine current implementation phase and status**:
 
-   a. **Research & Design Phase (if not completed)**:
+    - Check tasks.md for which tasks are marked "To Do" vs "In Progress" vs "Done"
+    - Identify the first uncompleted task(s) to start with
+    - Review the status section to understand current progress
+    
+2. **Execute the next actionable tasks in priority order**:
 
-   - Team members execute research tasks assigned in tasks.md
-   - Conduct team reviews of research findings
-   - Update plan and spec based on research results
-   - Validate research outcomes with all relevant team personas
-
-   b. **Implementation Phase**:
-
-   - Developers implement technical solution following team plan
-   - UX Designer validates design implementation against requirements
-   - Quality Assurance creates and executes tests as implementation progresses
-   - DevOps prepares deployment infrastructure and automation
-   - Technical Architect validates technical decisions and architecture
-   - Product Manager validates user value delivery throughout
-
-   c. **Testing Phase**:
-
-   - QA executes comprehensive testing plan
-   - All team members participate in feature validation
-   - Conduct cross-team validation of requirements fulfillment
-   - Perform team-based quality assurance activities
-
-   d. **Deployment Phase**:
-
-   - DevOps executes deployment following established procedures
-   - All team members validate deployment outcomes
-   - Conduct team-based post-deployment validation
-   - Update documentation and operational procedures
+    a. **If Research & Design Phase tasks remain (RD001-RD006)**:
+    
+    - START with the first "To Do" research task
+    - ACTUALLY PERFORM the research (not just document it)
+    - Document findings in research.md
+    - Update task status to "Done" when complete
+    - MOVE TO NEXT research task
+    - Only move to Implementation Phase when all P1 research tasks are "Done"
+    
+    b. **If Implementation Phase tasks are ready (IMPL001-IMPL014)**:
+    
+    - START with IMPL001 (Project Setup) - create actual project structure, directories
+    - CREATE code files and implement functionality (don't just plan it)
+    - Follow the implementation approach from plan.md
+    - Work collaboratively: Developer implements, UX validates design, QA prepares tests
+    - Update code files with actual implementation
+    - Update task status to "In Progress" when starting, "Done" when complete
+    - MOVE TO NEXT implementation task
+    - Do NOT claim tasks are "done" without creating/modifying actual code
+    
+    c. **If Testing Phase tasks are ready (TEST001-TEST008)**:
+    
+    - QA executes comprehensive testing plan from tasks.md
+    - Create test files and test code (actual test implementations, not just plans)
+    - Run tests against implementations
+    - Document test results
+    - Update task status as tests complete
+    - Do NOT claim testing is done without actual test code and results
+    
+    d. **If Deployment Phase tasks are ready (DEPLOY001-DEPLOY005)**:
+    
+    - DevOps executes deployment following established procedures
+    - Create packaging and installation artifacts
+    - Test the installation process
+    - Update task status as deployment completes
 
 1. **Maintain team communication and coordination**:
 
@@ -213,3 +225,29 @@ Given that implementation focus, do this:
 - Performance requirements met as defined by Architect
 - Operational requirements met as defined by DevOps
 - User value delivered as defined by Product Manager
+
+## Critical Implementation Rules
+
+**DO NOT claim a task is "Done" without evidence:**
+
+1. **For Research Tasks**: Document findings in research.md with actual research results, not just "planning to research"
+2. **For Implementation Tasks**: Create actual code files, implement features, and show the working code
+3. **For Testing Tasks**: Write actual test code, run tests, and document results - don't just plan tests
+4. **For Documentation**: Create actual documentation files with content, not empty files
+5. **For Setup Tasks**: Create actual project structure, directories, configuration files - not just plans
+
+**Track progress realistically:**
+
+- Update task status ONLY when work is actually complete with deliverables
+- Mark as "In Progress" when starting real work
+- Mark as "Done" only when deliverables are created/completed
+- Never claim success without showing the actual work product
+
+**Avoid these mistakes:**
+
+- ✗ Creating implementation logs that list what "will be done"
+- ✗ Writing plans instead of doing the work
+- ✗ Claiming milestones are complete without code/tests
+- ✓ Actually implementing code and creating test files
+- ✓ Documenting research with real findings
+- ✓ Showing working implementations with actual code
