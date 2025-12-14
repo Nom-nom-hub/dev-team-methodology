@@ -25,13 +25,8 @@ fi
 
 RELEASE_NOTES=$(cat "$RELEASE_NOTES_FILE")
 
-# Create the release with assets
-ASSETS=()
-for asset in .genreleases/*.zip; do
-  if [[ -f "$asset" ]]; then
-    ASSETS+=("$asset")
-  fi
-done
+# Escape JSON properly
+ESCAPED_NOTES=$(printf '%s\n' "$RELEASE_NOTES" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | sed ':a;N;$!ba;s/\n/\\n/g')
 
 # Create release using GitHub API
 curl -L \
@@ -44,7 +39,7 @@ curl -L \
     \"tag_name\":\"$NEW_VERSION\",
     \"target_commitish\":\"main\",
     \"name\":\"$NEW_VERSION\",
-    \"body\":\"$(printf '%s\n' "$RELEASE_NOTES" | sed 's/"/\\"/g' | tr '\n\r' '\n\n')\",
+    \"body\":\"$ESCAPED_NOTES\",
     \"draft\":false,
     \"prerelease\":false,
     \"generate_release_notes\":false
