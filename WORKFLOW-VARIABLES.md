@@ -71,6 +71,7 @@ specs/
 **Prerequisites**: None
 
 **Outputs**:
+
 - `specs/[FEATURE]/spec.md` - Feature specification
 - `specs/[FEATURE]/checklists/team-spec-checklist.md` - Quality validation checklist
 - Git branch `[FEATURE]` created and checked out
@@ -84,10 +85,12 @@ specs/
 **Inputs**: Feature description (scope or focus for review)
 
 **Prerequisites**:
+
 - `specs/[FEATURE]/spec.md` must exist and be completed
 - Feature branch must be checked out
 
 **Outputs**:
+
 - Updated `specs/[FEATURE]/spec.md` with team validations
 - `specs/[FEATURE]/checklists/team-validation-checklist.md` - Team review results
 - Validation summary with pass/fail status per persona
@@ -101,11 +104,13 @@ specs/
 **Inputs**: Planning focus or additional requirements
 
 **Prerequisites**:
+
 - `specs/[FEATURE]/spec.md` must be complete
 - `specs/[FEATURE]/checklists/team-validation-checklist.md` must show all passed
 - Feature branch must be checked out
 
 **Outputs**:
+
 - `specs/[FEATURE]/plan.md` - Implementation plan
 - `specs/[FEATURE]/research.md` - Research findings (if applicable)
 - `specs/[FEATURE]/personas/` - Team persona perspectives
@@ -120,11 +125,13 @@ specs/
 **Inputs**: Task generation focus or additional requirements
 
 **Prerequisites**:
+
 - `specs/[FEATURE]/spec.md` must exist
 - `specs/[FEATURE]/plan.md` must exist
 - Feature branch must be checked out
 
 **Outputs**:
+
 - `specs/[FEATURE]/tasks.md` - Detailed task breakdown by phase
 
 **Next Phase**: `/team.implement`
@@ -136,12 +143,14 @@ specs/
 **Inputs**: Implementation focus or current status
 
 **Prerequisites**:
+
 - `specs/[FEATURE]/spec.md` must exist
 - `specs/[FEATURE]/plan.md` must exist
 - `specs/[FEATURE]/tasks.md` must exist
 - Feature branch must be checked out
 
 **Outputs**:
+
 - Code files implementing the feature
 - Updated `specs/[FEATURE]/tasks.md` with task status changes
 - `specs/[FEATURE]/implementation-log.md` - Implementation progress log
