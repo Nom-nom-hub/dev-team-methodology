@@ -38,7 +38,7 @@ function Get-CurrentBranch {
 
     # For non-git repos, try to find the latest feature directory
     $repoRoot = Get-RepoRoot
-    $specsDir = Join-Path $repoRoot "specs"
+    $specsDir = Join-Path $repoRoot ".team/specs"
 
     if (Test-Path $specsDir) {
         $latestFeature = ""
@@ -102,7 +102,7 @@ function Find-FeatureDirByPrefix {
         [string]$BranchName
     )
 
-    $specsDir = Join-Path $RepoRoot "specs"
+    $specsDir = Join-Path $RepoRoot ".team/specs"
 
     # Extract numeric prefix from branch (e.g., "004" from "004-whatever")
     if ($BranchName -notmatch '^\d{3}-') {

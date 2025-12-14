@@ -132,7 +132,7 @@ if (-not $repoRoot) {
 
 Set-Location $repoRoot
 
-$specsDir = Join-Path $repoRoot "specs"
+$specsDir = Join-Path $repoRoot ".team/specs"
 if (-not (Test-Path $specsDir)) {
     New-Item -ItemType Directory -Path $specsDir -Force | Out-Null
 }
