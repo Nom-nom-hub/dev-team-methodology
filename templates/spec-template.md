@@ -1,47 +1,38 @@
 # Team Feature Specification: [FEATURE NAME]
 
-**Feature Branch**: `[###-feature-name]`
-**Created**: [DATE]
-**Status**: Draft
-**Input**: User description: "$ARGUMENTS"
+**Feature Branch**: `[###-feature-name]` **Created**: [DATE] **Status**: Draft **Input**: User description: "$ARGUMENTS"
 
 ## Team Persona Input Summary
 
 ### Product Manager Perspective
-**User Value**: [PM_USER_VALUE]
-**Success Metrics**: [PM_SUCCESS_METRICS]
-**Business Justification**: [PM_BUSINESS_JUSTIFICATION]
-**Key Considerations**: [PM_CONSIDERATIONS]
+
+**User Value**: [PM_USER_VALUE] **Success Metrics**: [PM_SUCCESS_METRICS] **Business Justification**:
+[PM_BUSINESS_JUSTIFICATION] **Key Considerations**: [PM_CONSIDERATIONS]
 
 ### Technical Architect Perspective
-**Feasibility Assessment**: [ARCH_FEASIBILITY]
-**Technical Constraints**: [ARCH_CONSTRAINTS]
-**Architecture Patterns**: [ARCH_PATTERNS]
-**Key Considerations**: [ARCH_CONSIDERATIONS]
+
+**Feasibility Assessment**: [ARCH_FEASIBILITY] **Technical Constraints**: [ARCH_CONSTRAINTS] **Architecture Patterns**:
+[ARCH_PATTERNS] **Key Considerations**: [ARCH_CONSIDERATIONS]
 
 ### UX Designer Perspective
-**User Experience Goals**: [UX_GOALS]
-**Accessibility Requirements**: [UX_ACCESSIBILITY]
-**Design Constraints**: [UX_CONSTRAINTS]
-**Key Considerations**: [UX_CONSIDERATIONS]
+
+**User Experience Goals**: [UX_GOALS] **Accessibility Requirements**: [UX_ACCESSIBILITY] **Design Constraints**:
+[UX_CONSTRAINTS] **Key Considerations**: [UX_CONSIDERATIONS]
 
 ### Quality Assurance Perspective
-**Quality Metrics**: [QA_METRICS]
-**Testing Requirements**: [QA_TESTING]
-**Risk Assessment**: [QA_RISKS]
-**Key Considerations**: [QA_CONSIDERATIONS]
+
+**Quality Metrics**: [QA_METRICS] **Testing Requirements**: [QA_TESTING] **Risk Assessment**: [QA_RISKS] **Key
+Considerations**: [QA_CONSIDERATIONS]
 
 ### Developer Perspective
-**Implementation Complexity**: [DEV_COMPLEXITY]
-**Technical Approach**: [DEV_APPROACH]
-**Code Quality Requirements**: [DEV_QUALITY]
-**Key Considerations**: [DEV_CONSIDERATIONS]
+
+**Implementation Complexity**: [DEV_COMPLEXITY] **Technical Approach**: [DEV_APPROACH] **Code Quality Requirements**:
+[DEV_QUALITY] **Key Considerations**: [DEV_CONSIDERATIONS]
 
 ### DevOps Perspective
-**Deployment Requirements**: [DEVOPS_DEPLOYMENT]
-**Infrastructure Needs**: [DEVOPS_INFRA]
-**Operational Considerations**: [DEVOPS_OPERATIONAL]
-**Key Considerations**: [DEVOPS_CONSIDERATIONS]
+
+**Deployment Requirements**: [DEVOPS_DEPLOYMENT] **Infrastructure Needs**: [DEVOPS_INFRA] **Operational
+Considerations**: [DEVOPS_OPERATIONAL] **Key Considerations**: [DEVOPS_CONSIDERATIONS]
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -64,14 +55,16 @@
 
 **Why this priority**: [Explain the value and why it has this priority level]
 
-**Independent Test**: [Describe how this can be tested independently - e.g., "Can be fully tested by [specific action] and delivers [specific value]"]
+**Independent Test**: \[Describe how this can be tested independently - e.g., "Can be fully tested by [specific action]
+and delivers [specific value]"\]
 
 **Acceptance Scenarios**:
 
 1. **Given** [initial state], **When** [action], **Then** [expected outcome]
-2. **Given** [initial state], **When** [action], **Then** [expected outcome]
+1. **Given** [initial state], **When** [action], **Then** [expected outcome]
 
 **Team Validation**:
+
 - **Product Manager**: [Validate business value alignment]
 - **Technical Architect**: [Validate technical feasibility]
 - **UX Designer**: [Validate user experience]
@@ -94,6 +87,7 @@
 1. **Given** [initial state], **When** [action], **Then** [expected outcome]
 
 **Team Validation**:
+
 - **Product Manager**: [Validate business value alignment]
 - **Technical Architect**: [Validate technical feasibility]
 - **UX Designer**: [Validate user experience]
@@ -116,6 +110,7 @@
 1. **Given** [initial state], **When** [action], **Then** [expected outcome]
 
 **Team Validation**:
+
 - **Product Manager**: [Validate business value alignment]
 - **Technical Architect**: [Validate technical feasibility]
 - **UX Designer**: [Validate user experience]
@@ -157,8 +152,10 @@
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?] **[Team Perspective Needed]**
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified] **[Team Perspective Needed]**
+- **FR-006**: System MUST authenticate users via \[NEEDS CLARIFICATION: auth method not specified - email/password, SSO,
+  OAuth?\] **[Team Perspective Needed]**
+- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified] **\[Team
+  Perspective Needed\]**
 
 ### Key Entities *(include if feature involves data)*
 
@@ -176,42 +173,52 @@
 ### Measurable Outcomes
 
 - **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"] **[Team Validation]**
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"] **[Team Validation]**
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"] **[Team Validation]**
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"] **[Team Validation]**
+- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"] **\[Team
+  Validation\]**
+- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
+  **[Team Validation]**
+- **SC-004**: \[Business metric, e.g., "Reduce support tickets related to [X] by 50%"\] **[Team Validation]**
 
 ### Team Success Metrics
 
 **Product Manager**:
+
 - [Business success metrics]
 
 **Technical Architect**:
+
 - [Technical success metrics]
 
 **UX Designer**:
+
 - [User experience success metrics]
 
 **Quality Assurance**:
+
 - [Quality success metrics]
 
 **Developer**:
+
 - [Implementation success metrics]
 
 **DevOps**:
+
 - [Operational success metrics]
 
 ## Team Collaboration Plan
 
 ### Responsibility Matrix
-| Task | Product Manager | Technical Architect | UX Designer | Quality Assurance | Developer | DevOps |
-|------|----------------|--------------------|-------------|--------------------|-----------|---------|
-| Requirements | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Design | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Implementation | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Testing | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Deployment | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+
+| Task           | Product Manager | Technical Architect | UX Designer | Quality Assurance | Developer | DevOps |
+| -------------- | --------------- | ------------------- | ----------- | ----------------- | --------- | ------ |
+| Requirements   | [ ]             | [ ]                 | [ ]         | [ ]               | [ ]       | [ ]    |
+| Design         | [ ]             | [ ]                 | [ ]         | [ ]               | [ ]       | [ ]    |
+| Implementation | [ ]             | [ ]                 | [ ]         | [ ]               | [ ]       | [ ]    |
+| Testing        | [ ]             | [ ]                 | [ ]         | [ ]               | [ ]       | [ ]    |
+| Deployment     | [ ]             | [ ]                 | [ ]         | [ ]               | [ ]       | [ ]    |
 
 ### Communication Guidelines
+
 - **Primary Communication Channel**: [Channel name]
 - **Status Updates**: [Frequency, e.g., "Daily standups"]
 - **Decision Making**: [Process for team decisions]
@@ -220,36 +227,42 @@
 ## Team Review Checklist
 
 ### Product Manager Review
+
 - [ ] User value clearly defined
 - [ ] Success metrics are measurable
 - [ ] Business justification adequate
 - [ ] Requirements align with user needs
 
 ### Technical Architect Review
+
 - [ ] Technically feasible
 - [ ] Architecture sound
 - [ ] Performance requirements realistic
 - [ ] Scalability requirements considered
 
 ### UX Designer Review
+
 - [ ] User experience considered
 - [ ] Accessibility requirements met
 - [ ] Design constraints addressed
 - [ ] Usability requirements defined
 
 ### Quality Assurance Review
+
 - [ ] Requirements are testable
 - [ ] Quality metrics defined
 - [ ] Risk assessment completed
 - [ ] Security requirements addressed
 
 ### Developer Review
+
 - [ ] Implementation approach feasible
 - [ ] Technical requirements clear
 - [ ] Code quality standards defined
 - [ ] Performance implications understood
 
 ### DevOps Review
+
 - [ ] Operational requirements met
 - [ ] Deployment strategy clear
 - [ ] Monitoring requirements defined

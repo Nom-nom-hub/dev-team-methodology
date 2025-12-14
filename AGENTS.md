@@ -5,6 +5,7 @@ This document provides instructions for AI agents to understand and implement th
 ## Overview
 
 The Team Methodology is a framework for software development that incorporates perspectives from multiple team personas:
+
 - **Product Manager**: Defines user value and success metrics
 - **Technical Architect**: Validates technical feasibility and architecture
 - **UX Designer**: Ensures user experience and accessibility
@@ -31,13 +32,15 @@ The methodology provides these slash commands:
 
 When implementing the Team Methodology:
 
-1. **Always consider team perspectives**: Each specification, plan, and task should incorporate input from relevant team personas.
+1. **Always consider team perspectives**: Each specification, plan, and task should incorporate input from relevant team
+   personas.
 
-2. **Validate across team roles**: Requirements should be validated by Product Manager (value), Technical Architect (feasibility), UX Designer (experience), QA (testability), Developer (implementation), and DevOps (operations).
+1. **Validate across team roles**: Requirements should be validated by Product Manager (value), Technical Architect
+   (feasibility), UX Designer (experience), QA (testability), Developer (implementation), and DevOps (operations).
 
-3. **Maintain traceability**: Keep track of how each team persona's input influences the development artifacts.
+1. **Maintain traceability**: Keep track of how each team persona's input influences the development artifacts.
 
-4. **Follow the workflow**: Use the commands in sequence (specify → review → plan → tasks → implement) for best results.
+1. **Follow the workflow**: Use the commands in sequence (specify → review → plan → tasks → implement) for best results.
 
 ## Key Principles
 
@@ -58,10 +61,12 @@ When implementing the Team Methodology:
 ## Agent-Specific Instructions
 
 Different AI agents may have specific configurations:
+
 - Claude: Uses `.claude/commands/` directory
 - Copilot: Uses `.github/agents/` directory
 - Cursor: Uses `.cursor/commands/` directory
 - Qwen: Uses `.qwen/commands/` directory
 - And others...
 
-Each agent will have team methodology commands available in their respective directories when the template packages are installed.
+Each agent will have team methodology commands available in their respective directories when the template packages are
+installed.

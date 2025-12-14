@@ -1,9 +1,9 @@
-###
+<!--
 description: Create or update the project constitution that defines team principles and working agreements.
 scripts:
   sh: echo "Constitution updated in memory/constitution.md"
   ps: echo "Constitution updated in memory/constitution.md"
-###
+-->
 
 ## User Input
 
@@ -15,35 +15,43 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-The text the user typed after `/team.constitution` in the triggering message **is** the constitution update focus or new principles. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
+The text the user typed after `/team.constitution` in the triggering message **is** the constitution update focus or new
+principles. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not
+ask the user to repeat it unless they provided an empty command.
 
 Given that constitution focus, do this:
 
 1. **Locate or create the project constitution**:
+
    - Check for existing constitution file: `memory/constitution.md`
    - If exists, load the current constitution
    - If not exists, start with a basic framework
 
-2. **Analyze user input for constitution updates**:
+1. **Analyze user input for constitution updates**:
+
    - Identify new principles or working agreements mentioned
    - Identify updates or modifications to existing principles
    - Identify team collaboration guidelines to add or modify
    - Consider team persona responsibilities and guidelines
 
-3. **Update the constitution structure**:
+1. **Update the constitution structure**:
+
    - Maintain consistent structure with existing constitution if present
    - Add or update principles based on user input
    - Include team persona responsibilities and guidelines
    - Define team working agreements and processes
 
-4. **Ensure team methodology alignment**:
-   - Include all 6 team personas: Product Manager, Technical Architect, UX Designer, Quality Assurance, Developer, DevOps Engineer
+1. **Ensure team methodology alignment**:
+
+   - Include all 6 team personas: Product Manager, Technical Architect, UX Designer, Quality Assurance, Developer,
+     DevOps Engineer
    - Define collaboration guidelines for cross-functional work
    - Include decision-making processes for team conflicts
    - Define communication protocols and expectations
    - Establish quality standards and validation processes
 
-5. **Integrate team persona perspectives**:
+1. **Integrate team persona perspectives**:
+
    - Document Product Manager responsibilities (user value, success metrics)
    - Document Technical Architect responsibilities (feasibility, architecture)
    - Document UX Designer responsibilities (user experience, accessibility)
@@ -51,33 +59,38 @@ Given that constitution focus, do this:
    - Document Developer responsibilities (implementation, code quality)
    - Document DevOps responsibilities (deployment, operations)
 
-6. **Define team collaboration processes**:
+1. **Define team collaboration processes**:
+
    - Communication protocols (meetings, updates, notifications)
    - Decision-making hierarchy and escalation paths
    - Conflict resolution procedures
    - Validation and review processes
    - Cross-team dependency management
 
-7. **Document quality standards**:
+1. **Document quality standards**:
+
    - Code quality standards and review processes
    - Testing requirements and quality gates
    - Documentation standards
    - Performance and security requirements
    - Operational and deployment standards
 
-8. **Write the updated constitution** to `memory/constitution.md` preserving existing content while incorporating new principles from user input.
+1. **Write the updated constitution** to `memory/constitution.md` preserving existing content while incorporating new
+   principles from user input.
 
 ## Constitution Structure Requirements
 
 The constitution should include these key sections:
 
 ### Team Personas and Responsibilities
+
 - Clear definition of each team persona role
 - Specific responsibilities for each persona
 - Decision-making authorities for each persona
 - Validation requirements for each persona
 
-### Team Collaboration Guidelines  
+### Team Collaboration Guidelines
+
 - Communication protocols and expectations
 - Meeting structures and schedules
 - Information sharing processes
@@ -85,6 +98,7 @@ The constitution should include these key sections:
 - Escalation paths for issues
 
 ### Quality Standards
+
 - Code quality requirements
 - Testing standards and coverage
 - Documentation requirements
@@ -92,6 +106,7 @@ The constitution should include these key sections:
 - Operational and deployment standards
 
 ### Decision-Making Processes
+
 - How technical decisions are made
 - How product decisions are made
 - How design decisions are made
@@ -99,6 +114,7 @@ The constitution should include these key sections:
 - How operational decisions are made
 
 ### Working Agreements
+
 - Team availability and response time expectations
 - Definition of "done" for different work types
 - Change management processes
@@ -108,6 +124,7 @@ The constitution should include these key sections:
 ## Team Validation Requirements
 
 Each constitution update should be validated against:
+
 - Alignment with team persona responsibilities
 - Consistency with team methodology principles
 - Feasibility of implementation
@@ -117,11 +134,11 @@ Each constitution update should be validated against:
 ## Output Requirements
 
 1. Update or create `memory/constitution.md` with new principles
-2. Ensure all team personas are properly represented
-3. Define clear team working agreements
-4. Establish decision-making and communication protocols
-5. Document quality standards and validation processes
-6. Update agent context with constitution changes
+1. Ensure all team personas are properly represented
+1. Define clear team working agreements
+1. Establish decision-making and communication protocols
+1. Document quality standards and validation processes
+1. Update agent context with constitution changes
 
 ## Guidelines
 

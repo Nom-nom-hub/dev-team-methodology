@@ -1,5 +1,6 @@
-###
-description: Create or update the team feature specification from a natural language feature description with input from all team personas.
+<!--
+description: Create or update the team feature specification from a natural language feature description with input from
+all team personas.
 handoffs:
   - label: Review Specification from Team Perspectives
     agent: team.review
@@ -10,7 +11,7 @@ handoffs:
 scripts:
   sh: scripts/bash/create-new-feature.sh --json "{ARGS}"
   ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
-###
+-->
 
 ## User Input
 
@@ -22,11 +23,14 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-The text the user typed after `/team.specify` in the triggering message **is** the feature description. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
+The text the user typed after `/team.specify` in the triggering message **is** the feature description. Assume you
+always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it
+unless they provided an empty command.
 
 Given that feature description, do this:
 
 1. **Generate a concise short name** (2-4 words) for the branch:
+
    - Analyze the feature description and extract the most meaningful keywords
    - Create a 2-4 word short name that captures the essence of the feature
    - Use action-noun format when possible (e.g., "add-user-auth", "fix-payment-bug")
@@ -38,67 +42,72 @@ Given that feature description, do this:
      - "Create a dashboard for analytics" → "analytics-dashboard"
      - "Fix payment processing timeout bug" → "fix-payment-timeout"
 
-2. **Check for existing branches before creating new one**:
+1. **Check for existing branches before creating new one**:
 
    a. First, fetch all remote branches to ensure we have the latest information:
 
-      ```bash
-      git fetch --all --prune
-      ```
+   ```bash
+   git fetch --all --prune
+   ```
 
    b. Find the highest feature number across all sources for the short-name:
-      - Remote branches: `git ls-remote --heads origin | grep -E 'refs/heads/[0-9]+-<short-name>$'`
-      - Local branches: `git branch | grep -E '^[* ]*[0-9]+-<short-name>$'`
-      - Specs directories: Check for directories matching `specs/[0-9]+-<short-name>`
+
+   - Remote branches: `git ls-remote --heads origin | grep -E 'refs/heads/[0-9]+-<short-name>$'`
+   - Local branches: `git branch | grep -E '^[* ]*[0-9]+-<short-name>$'`
+   - Specs directories: Check for directories matching `specs/[0-9]+-<short-name>`
 
    c. Determine the next available number:
-      - Extract all numbers from all three sources
-      - Find the highest number N
-      - Use N+1 for the new branch number
+
+   - Extract all numbers from all three sources
+   - Find the highest number N
+   - Use N+1 for the new branch number
 
    d. Run the script `{SCRIPT}` with the calculated number and short-name:
-      - Pass `--number N+1` and `--short-name "your-short-name"` along with the feature description
-      - Bash example: `{SCRIPT} --json --number 5 --short-name "user-auth" "Add user authentication"`
-      - PowerShell example: `{SCRIPT} -Json -Number 5 -ShortName "user-auth" "Add user authentication"`
+
+   - Pass `--number N+1` and `--short-name "your-short-name"` along with the feature description
+   - Bash example: `{SCRIPT} --json --number 5 --short-name "user-auth" "Add user authentication"`
+   - PowerShell example: `{SCRIPT} -Json -Number 5 -ShortName "user-auth" "Add user authentication"`
 
    **IMPORTANT**:
+
    - Check all three sources (remote branches, local branches, specs directories) to find the highest number
    - Only match branches/directories with the exact short-name pattern
    - If no existing branches/directories found with this short-name, start with number 1
    - You must only ever run this script once per feature
    - The JSON is provided in the terminal as output - always refer to it to get the actual content you're looking for
    - The JSON output will contain BRANCH_NAME and SPEC_FILE paths
-   - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot")
+   - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'''m Groot' (or double-quote if possible: "I'm
+     Groot")
 
-3. Load `templates/spec-template.md` to understand required sections for team methodology.
+1. Load `templates/spec-template.md` to understand required sections for team methodology.
 
-4. Follow this execution flow:
+1. Follow this execution flow:
 
-    1. Parse user description from Input
-       If empty: ERROR "No feature description provided"
-    2. Extract key concepts from description
-       Identify: actors, actions, data, constraints
-    3. For unclear aspects:
-       - Make informed guesses based on context and industry standards
-       - Only mark with [NEEDS CLARIFICATION: specific question] if:
-         - The choice significantly impacts feature scope or user experience
-         - Multiple reasonable interpretations exist with different implications
-         - No reasonable default exists
-       - **LIMIT: Maximum 3 [NEEDS CLARIFICATION] markers total**
-       - Prioritize clarifications by impact: scope > security/privacy > user experience > technical details
-    4. Fill User Scenarios & Testing section incorporating team perspectives
-       If no clear user flow: ERROR "Cannot determine user scenarios"
-    5. Generate Functional Requirements with team validation input
-       Each requirement must be testable and validated by relevant team personas
-       Use reasonable defaults for unspecified details (document assumptions in Assumptions section)
-    6. Define Success Criteria incorporating all team perspectives
-       Create measurable, technology-agnostic outcomes aligned with team success metrics
-       Include both quantitative metrics (time, performance, volume) and qualitative measures (user satisfaction, task completion)
-       Each criterion must be verifiable without implementation details
-    7. Identify Key Entities (if data involved) with team perspective validation
-    8. Return: SUCCESS (spec ready for team planning)
+   1. Parse user description from Input If empty: ERROR "No feature description provided"
+   1. Extract key concepts from description Identify: actors, actions, data, constraints
+   1. For unclear aspects:
+      - Make informed guesses based on context and industry standards
+      - Only mark with [NEEDS CLARIFICATION: specific question] if:
+        - The choice significantly impacts feature scope or user experience
+        - Multiple reasonable interpretations exist with different implications
+        - No reasonable default exists
+      - **LIMIT: Maximum 3 [NEEDS CLARIFICATION] markers total**
+      - Prioritize clarifications by impact: scope > security/privacy > user experience > technical details
+   1. Fill User Scenarios & Testing section incorporating team perspectives If no clear user flow: ERROR "Cannot
+      determine user scenarios"
+   1. Generate Functional Requirements with team validation input Each requirement must be testable and validated by
+      relevant team personas Use reasonable defaults for unspecified details (document assumptions in Assumptions
+      section)
+   1. Define Success Criteria incorporating all team perspectives Create measurable, technology-agnostic outcomes
+      aligned with team success metrics Include both quantitative metrics (time, performance, volume) and qualitative
+      measures (user satisfaction, task completion) Each criterion must be verifiable without implementation details
+   1. Identify Key Entities (if data involved) with team perspective validation
+   1. Return: SUCCESS (spec ready for team planning)
 
-5. Write the specification to SPEC_FILE using the team template structure, replacing placeholders with concrete details derived from the feature description (arguments) while preserving section order and headings. Incorporate input from all team personas:
+1. Write the specification to SPEC_FILE using the team template structure, replacing placeholders with concrete details
+   derived from the feature description (arguments) while preserving section order and headings. Incorporate input from
+   all team personas:
+
    - Product Manager: User value and success metrics
    - Technical Architect: Feasibility and technical constraints
    - UX Designer: User experience and accessibility
@@ -106,115 +115,131 @@ Given that feature description, do this:
    - Developer: Implementation approach and complexity
    - DevOps: Deployment and operational considerations
 
-6. **Team Specification Quality Validation**: After writing the initial spec, validate it against team quality criteria:
+1. **Team Specification Quality Validation**: After writing the initial spec, validate it against team quality criteria:
 
-   a. **Create Team Spec Quality Checklist**: Generate a checklist file at `FEATURE_DIR/checklists/team-spec-checklist.md` using the checklist template structure with these validation items:
+   a. **Create Team Spec Quality Checklist**: Generate a checklist file at
+   `FEATURE_DIR/checklists/team-spec-checklist.md` using the checklist template structure with these validation items:
 
-      ```markdown
-      # Team Specification Quality Checklist: [FEATURE NAME]
+   ```markdown
+   # Team Specification Quality Checklist: [FEATURE NAME]
 
-      **Purpose**: Validate specification completeness and quality from all team perspectives before proceeding to planning
-      **Created**: [DATE]
-      **Feature**: [Link to spec.md]
+   **Purpose**: Validate specification completeness and quality from all team perspectives before proceeding to planning
+   **Created**: [DATE]
+   **Feature**: [Link to spec.md]
 
-      ## Content Quality
+   ## Content Quality
 
-      - [ ] No implementation details (languages, frameworks, APIs)
-      - [ ] Focused on user value and business needs
-      - [ ] Written for non-technical stakeholders
-      - [ ] All mandatory sections completed
-      - [ ] All team persona perspectives included
-      - [ ] Team validation requirements addressed
+   - [ ] No implementation details (languages, frameworks, APIs)
+   - [ ] Focused on user value and business needs
+   - [ ] Written for non-technical stakeholders
+   - [ ] All mandatory sections completed
+   - [ ] All team persona perspectives included
+   - [ ] Team validation requirements addressed
 
-      ## Requirement Completeness
+   ## Requirement Completeness
 
-      - [ ] No [NEEDS CLARIFICATION] markers remain
-      - [ ] Requirements are testable and unambiguous
-      - [ ] Success criteria are measurable
-      - [ ] Success criteria are technology-agnostic (no implementation details)
-      - [ ] All acceptance scenarios are defined
-      - [ ] Edge cases are identified
-      - [ ] Scope is clearly bounded
-      - [ ] Dependencies and assumptions identified
-      - [ ] All team persona validation points addressed
+   - [ ] No [NEEDS CLARIFICATION] markers remain
+   - [ ] Requirements are testable and unambiguous
+   - [ ] Success criteria are measurable
+   - [ ] Success criteria are technology-agnostic (no implementation details)
+   - [ ] All acceptance scenarios are defined
+   - [ ] Edge cases are identified
+   - [ ] Scope is clearly bounded
+   - [ ] Dependencies and assumptions identified
+   - [ ] All team persona validation points addressed
 
-      ## Team Perspective Validation
+   ## Team Perspective Validation
 
-      - [ ] Product Manager perspective included and validated
-      - [ ] Technical Architect perspective included and validated
-      - [ ] UX Designer perspective included and validated
-      - [ ] Quality Assurance perspective included and validated
-      - [ ] Developer perspective included and validated
-      - [ ] DevOps perspective included and validated
+   - [ ] Product Manager perspective included and validated
+   - [ ] Technical Architect perspective included and validated
+   - [ ] UX Designer perspective included and validated
+   - [ ] Quality Assurance perspective included and validated
+   - [ ] Developer perspective included and validated
+   - [ ] DevOps perspective included and validated
 
-      ## Feature Readiness
+   ## Feature Readiness
 
-      - [ ] All functional requirements have clear acceptance criteria
-      - [ ] User scenarios cover primary flows
-      - [ ] Feature meets measurable outcomes defined in Success Criteria
-      - [ ] No implementation details leak into specification
-      - [ ] Team collaboration plan defined
-      - [ ] Team success metrics aligned
+   - [ ] All functional requirements have clear acceptance criteria
+   - [ ] User scenarios cover primary flows
+   - [ ] Feature meets measurable outcomes defined in Success Criteria
+   - [ ] No implementation details leak into specification
+   - [ ] Team collaboration plan defined
+   - [ ] Team success metrics aligned
 
-      ## Notes
+   ## Notes
 
-      - Items marked incomplete require spec updates before `/team.review` or `/team.plan`
-      ```
+   - Items marked incomplete require spec updates before `/team.review` or `/team.plan`
+   ```
 
    b. **Run Team Validation Check**: Review the spec against each checklist item:
-      - For each item, determine if it passes or fails
-      - Document specific issues found (quote relevant spec sections)
+
+   - For each item, determine if it passes or fails
+   - Document specific issues found (quote relevant spec sections)
 
    c. **Handle Validation Results**:
 
-      - **If all items pass**: Mark checklist complete and proceed to step 6
+   - **If all items pass**: Mark checklist complete and proceed to step 6
 
-      - **If items fail (excluding [NEEDS CLARIFICATION])**:
-        1. List the failing items and specific issues
-        2. Update the spec to address each issue
-        3. Re-run validation until all items pass (max 3 iterations)
-        4. If still failing after 3 iterations, document remaining issues in checklist notes and warn user
+   - **If items fail (excluding [NEEDS CLARIFICATION])**:
 
-      - **If [NEEDS CLARIFICATION] markers remain**:
-        1. Extract all [NEEDS CLARIFICATION: ...] markers from the spec
-        2. **LIMIT CHECK**: If more than 3 markers exist, keep only the 3 most critical (by scope/security/UX impact) and make informed guesses for the rest
-        3. For each clarification needed (max 3), present options to user in this format:
+     1. List the failing items and specific issues
+     1. Update the spec to address each issue
+     1. Re-run validation until all items pass (max 3 iterations)
+     1. If still failing after 3 iterations, document remaining issues in checklist notes and warn user
 
-           ```markdown
-           ## Question [N]: [Topic]
+   - **If [NEEDS CLARIFICATION] markers remain**:
 
-           **Context**: [Quote relevant spec section]
+     1. Extract all [NEEDS CLARIFICATION: ...] markers from the spec
 
-           **What we need to know**: [Specific question from NEEDS CLARIFICATION marker]
+     1. **LIMIT CHECK**: If more than 3 markers exist, keep only the 3 most critical (by scope/security/UX impact) and
+        make informed guesses for the rest
 
-           **Suggested Answers**:
+     1. For each clarification needed (max 3), present options to user in this format:
 
-           | Option | Answer | Implications |
-           |--------|--------|--------------|
-           | A      | [First suggested answer] | [What this means for the feature] |
-           | B      | [Second suggested answer] | [What this means for the feature] |
-           | C      | [Third suggested answer] | [What this means for the feature] |
-           | Custom | Provide your own answer | [Explain how to provide custom input] |
+        ```markdown
+        ## Question [N]: [Topic]
 
-           **Your choice**: _[Wait for user response]_
-           ```
+        **Context**: [Quote relevant spec section]
 
-        4. **CRITICAL - Table Formatting**: Ensure markdown tables are properly formatted:
-           - Use consistent spacing with pipes aligned
-           - Each cell should have spaces around content: `| Content |` not `|Content|`
-           - Header separator must have at least 3 dashes: `|--------|`
-           - Test that the table renders correctly in markdown preview
-        5. Number questions sequentially (Q1, Q2, Q3 - max 3 total)
-        6. Present all questions together before waiting for responses
-        7. Wait for user to respond with their choices for all questions (e.g., "Q1: A, Q2: Custom - [details], Q3: B")
-        8. Update the spec by replacing each [NEEDS CLARIFICATION] marker with the user's selected or provided answer
-        9. Re-run team validation after all clarifications are resolved
+        **What we need to know**: [Specific question from NEEDS CLARIFICATION marker]
 
-   d. **Update Team Checklist**: After each validation iteration, update the checklist file with current pass/fail status
+        **Suggested Answers**:
 
-7. Report completion with branch name, spec file path, team checklist results, and readiness for the next phase (`/team.review` or `/team.plan`).
+        | Option | Answer | Implications |
+        |--------|--------|--------------|
+        | A      | [First suggested answer] | [What this means for the feature] |
+        | B      | [Second suggested answer] | [What this means for the feature] |
+        | C      | [Third suggested answer] | [What this means for the feature] |
+        | Custom | Provide your own answer | [Explain how to provide custom input] |
 
-**NOTE:** The script creates and checks out the new branch and initializes the spec file before writing. The spec should incorporate perspectives from all team personas as defined in the team methodology.
+        **Your choice**: _[Wait for user response]_
+        ```
+
+     1. **CRITICAL - Table Formatting**: Ensure markdown tables are properly formatted:
+
+        - Use consistent spacing with pipes aligned
+        - Each cell should have spaces around content: `| Content |` not `|Content|`
+        - Header separator must have at least 3 dashes: `|--------|`
+        - Test that the table renders correctly in markdown preview
+
+     1. Number questions sequentially (Q1, Q2, Q3 - max 3 total)
+
+     1. Present all questions together before waiting for responses
+
+     1. Wait for user to respond with their choices for all questions (e.g., "Q1: A, Q2: Custom - [details], Q3: B")
+
+     1. Update the spec by replacing each [NEEDS CLARIFICATION] marker with the user's selected or provided answer
+
+     1. Re-run team validation after all clarifications are resolved
+
+   d. **Update Team Checklist**: After each validation iteration, update the checklist file with current pass/fail
+   status
+
+1. Report completion with branch name, spec file path, team checklist results, and readiness for the next phase
+   (`/team.review` or `/team.plan`).
+
+**NOTE:** The script creates and checks out the new branch and initializes the spec file before writing. The spec should
+incorporate perspectives from all team personas as defined in the team methodology.
 
 ## General Guidelines for Team Methodology
 
@@ -223,7 +248,8 @@ Given that feature description, do this:
 - Focus on **WHAT** users need and **WHY** from all team perspectives.
 - Avoid HOW to implement (no tech stack, APIs, code structure).
 - Written for business stakeholders, not developers.
-- Include input and validation from all team personas: Product Manager, Technical Architect, UX Designer, Quality Assurance, Developer, DevOps.
+- Include input and validation from all team personas: Product Manager, Technical Architect, UX Designer, Quality
+  Assurance, Developer, DevOps.
 - DO NOT create any checklists that are embedded in the spec. That will be a separate command.
 
 ### Section Requirements
@@ -238,14 +264,14 @@ Given that feature description, do this:
 When creating this spec from a user prompt:
 
 1. **Make informed guesses**: Use context, industry standards, and common patterns to fill gaps
-2. **Document assumptions**: Record reasonable defaults in the Assumptions section
-3. **Limit clarifications**: Maximum 3 [NEEDS CLARIFICATION] markers - use only for critical decisions that:
+1. **Document assumptions**: Record reasonable defaults in the Assumptions section
+1. **Limit clarifications**: Maximum 3 [NEEDS CLARIFICATION] markers - use only for critical decisions that:
    - Significantly impact feature scope or user experience
    - Have multiple reasonable interpretations with different implications
    - Lack any reasonable default
-4. **Prioritize clarifications**: scope > security/privacy > user experience > technical details
-5. **Think like a tester**: Every vague requirement should fail the "testable and unambiguous" checklist item
-6. **Common areas needing clarification** (only if no reasonable default exists):
+1. **Prioritize clarifications**: scope > security/privacy > user experience > technical details
+1. **Think like a tester**: Every vague requirement should fail the "testable and unambiguous" checklist item
+1. **Common areas needing clarification** (only if no reasonable default exists):
    - Feature scope and boundaries (include/exclude specific use cases)
    - User types and permissions (if multiple conflicting interpretations possible)
    - Security/compliance requirements (when legally/financially significant)
@@ -263,10 +289,10 @@ When creating this spec from a user prompt:
 Success criteria must be:
 
 1. **Measurable**: Include specific metrics (time, percentage, count, rate)
-2. **Technology-agnostic**: No mention of frameworks, languages, databases, or tools
-3. **User-focused**: Describe outcomes from user/business perspective, not system internals
-4. **Verifiable**: Can be tested/validated without knowing implementation details
-5. **Team-aligned**: Include success metrics from all relevant team personas
+1. **Technology-agnostic**: No mention of frameworks, languages, databases, or tools
+1. **User-focused**: Describe outcomes from user/business perspective, not system internals
+1. **Verifiable**: Can be tested/validated without knowing implementation details
+1. **Team-aligned**: Include success metrics from all relevant team personas
 
 **Good examples**:
 

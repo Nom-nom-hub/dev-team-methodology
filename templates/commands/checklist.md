@@ -1,9 +1,10 @@
-###
-description: Generate quality checklists to validate requirements completeness, clarity, and consistency from all team perspectives.
+<!--
+description: Generate quality checklists to validate requirements completeness, clarity, and consistency from all team
+perspectives.
 scripts:
   sh: echo "Checklist generated in specs/[BRANCH]/checklists/requirements-checklist.md"
   ps: echo "Checklist generated in specs/[BRANCH]/checklists/requirements-checklist.md"
-###
+-->
 
 ## User Input
 
@@ -15,17 +16,21 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-The text the user typed after `/team.checklist` in the triggering message **is** the checklist focus or specific validation requirements. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
+The text the user typed after `/team.checklist` in the triggering message **is** the checklist focus or specific
+validation requirements. Assume you always have it available in this conversation even if `{ARGS}` appears literally
+below. Do not ask the user to repeat it unless they provided an empty command.
 
 Given that checklist focus, do this:
 
 1. **Identify the feature to create checklists for**:
+
    - If on a feature branch, use the current branch
    - Determine the feature directory path: `specs/[FEATURE-NUMBER]-[FEATURE-NAME]`
    - Validate that the spec file exists: `specs/[BRANCH]/spec.md`
    - Create or validate the checklists directory: `specs/[BRANCH]/checklists/`
 
-2. **Analyze the specification** to identify all elements that need validation:
+1. **Analyze the specification** to identify all elements that need validation:
+
    - User stories and acceptance scenarios
    - Functional requirements
    - Success criteria
@@ -34,64 +39,73 @@ Given that checklist focus, do this:
    - Edge cases and error conditions
    - Constraints and assumptions
 
-3. **Generate comprehensive team validation checklist** organized by team persona:
+1. **Generate comprehensive team validation checklist** organized by team persona:
 
    a. **Product Manager Checklist**:
-      - User value alignment validation
-      - Success metrics clarity validation
-      - Business justification validation
-      - User story completeness validation
-      - Requirement alignment validation
+
+   - User value alignment validation
+   - Success metrics clarity validation
+   - Business justification validation
+   - User story completeness validation
+   - Requirement alignment validation
 
    b. **Technical Architect Checklist**:
-      - Technical feasibility validation
-      - Architecture pattern validation
-      - Performance requirement validation
-      - Scalability consideration validation
-      - Technical constraint validation
+
+   - Technical feasibility validation
+   - Architecture pattern validation
+   - Performance requirement validation
+   - Scalability consideration validation
+   - Technical constraint validation
 
    c. **UX Designer Checklist**:
-      - User experience adequacy validation
-      - Accessibility requirement validation
-      - Design constraint validation
-      - Usability requirement validation
-      - User flow optimization validation
+
+   - User experience adequacy validation
+   - Accessibility requirement validation
+   - Design constraint validation
+   - Usability requirement validation
+   - User flow optimization validation
 
    d. **Quality Assurance Checklist**:
-      - Requirement testability validation
-      - Quality metric definition validation
-      - Risk assessment completeness validation
-      - Security requirement validation
-      - Testing approach validation
+
+   - Requirement testability validation
+   - Quality metric definition validation
+   - Risk assessment completeness validation
+   - Security requirement validation
+   - Testing approach validation
 
    e. **Developer Checklist**:
-      - Implementation approach clarity validation
-      - Code quality standard validation
-      - Performance consideration validation
-      - Technical requirement clarity validation
-      - Maintainability validation
+
+   - Implementation approach clarity validation
+   - Code quality standard validation
+   - Performance consideration validation
+   - Technical requirement clarity validation
+   - Maintainability validation
 
    f. **DevOps Checklist**:
-      - Operational requirement validation
-      - Deployment strategy validation
-      - Monitoring requirement validation
-      - Security scanning validation
-      - Infrastructure need validation
 
-4. **Create cross-team validation checklist**:
+   - Operational requirement validation
+   - Deployment strategy validation
+   - Monitoring requirement validation
+   - Security scanning validation
+   - Infrastructure need validation
+
+1. **Create cross-team validation checklist**:
+
    - All team perspectives included validation
    - Team collaboration plan validation
    - Communication guideline validation
    - Responsibility matrix validation
 
-5. **Generate completeness checklist**:
+1. **Generate completeness checklist**:
+
    - All required sections completed validation
    - All team inputs incorporated validation
    - All validations performed validation
    - All risks identified and mitigated validation
    - All dependencies resolved validation
 
-6. **Create sign-off checklist**:
+1. **Create sign-off checklist**:
+
    - Product Manager approval validation
    - Technical Architect approval validation
    - UX Designer approval validation
@@ -99,11 +113,13 @@ Given that checklist focus, do this:
    - Developer approval validation
    - DevOps approval validation
 
-7. **Write the checklist** to `specs/[BRANCH]/checklists/requirements-checklist.md` using the team template structure with all validation items.
+1. **Write the checklist** to `specs/[BRANCH]/checklists/requirements-checklist.md` using the team template structure
+   with all validation items.
 
 ## Checklist Structure Requirements
 
 Each checklist should include:
+
 - Clear, specific validation items
 - Checkboxes for completion tracking ([ ] / [x])
 - Validation owner (team persona responsible)
@@ -113,6 +129,7 @@ Each checklist should include:
 ## Team Validation Process
 
 For each checklist item:
+
 - Verify the specification element meets team standards
 - Check alignment with team persona perspectives
 - Confirm completeness and clarity
@@ -130,12 +147,12 @@ For each checklist item:
 ## Output Requirements
 
 1. Create comprehensive validation checklist in `specs/[BRANCH]/checklists/requirements-checklist.md`
-2. Include validation items for all 6 team personas
-3. Define validation owners and responsibilities
-4. Create cross-team validation items
-5. Establish completion criteria and sign-off process
-6. Document remediation procedures for failed validations
-7. Update agent context with validation process information
+1. Include validation items for all 6 team personas
+1. Define validation owners and responsibilities
+1. Create cross-team validation items
+1. Establish completion criteria and sign-off process
+1. Document remediation procedures for failed validations
+1. Update agent context with validation process information
 
 ## Guidelines
 

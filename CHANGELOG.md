@@ -2,12 +2,13 @@
 
 All notable changes to the Team-Driven Development methodology will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
 ### Added
+
 - Initial release of the Team-Driven Development methodology
 - Core CLI tool with team-focused commands
 - Team persona framework with 6 defined roles
@@ -19,23 +20,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Slash command templates for all team methodologies
 
 ### Changed
+
 - N/A
 
 ### Deprecated
+
 - N/A
 
 ### Removed
+
 - N/A
 
 ### Fixed
+
 - N/A
 
 ### Security
+
 - N/A
 
 ## [0.1.0] - 2025-01-01
 
-### Added
+### Added 1
+
 - Team-Driven Development methodology framework
 - Team persona definitions:
   - Product Manager perspective and responsibilities
@@ -53,20 +60,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions for automated release packages
 - Documentation for team methodology workflow
 
-### Changed
+### Changed 1
+
 - N/A
 
-### Deprecated
+### Deprecated 1
+
 - N/A
 
-### Removed
+### Removed 1
+
 - N/A
 
-### Fixed
+### Fixed 1
+
 - N/A
 
-### Security
+### Security 1
+
 - N/A
 
-[Unreleased]: https://github.com/your-repo/dev-team-methodology/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/your-repo/dev-team-methodology/releases/tag/v0.1.0
+[unreleased]: https://github.com/your-repo/dev-team-methodology/compare/v0.1.0...HEAD

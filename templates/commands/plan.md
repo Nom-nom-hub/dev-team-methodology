@@ -1,5 +1,6 @@
-###
-description: Create an implementation plan that incorporates team persona input and cross-functional collaboration requirements.
+<!--
+description: Create an implementation plan that incorporates team persona input and cross-functional collaboration
+requirements.
 handoffs:
   - label: Generate Implementation Tasks
     agent: team.tasks
@@ -7,7 +8,7 @@ handoffs:
 scripts:
   sh: scripts/bash/setup-plan.sh --json
   ps: scripts/powershell/setup-plan.ps1 -Json
-###
+-->
 
 ## User Input
 
@@ -19,92 +20,110 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-The text the user typed after `/team.plan` in the triggering message **is** the planning focus or additional requirements. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
+The text the user typed after `/team.plan` in the triggering message **is** the planning focus or additional
+requirements. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not
+ask the user to repeat it unless they provided an empty command.
 
 Given that planning focus, do this:
 
 1. **Identify the feature to plan**:
-   - If on a feature branch, use the current branch
-   - Determine the feature directory path: `specs/[FEATURE-NUMBER]-[FEATURE-NAME]`
-   - Validate that the spec file exists: `specs/[BRANCH]/spec.md`
-   - Validate that the spec has been reviewed from team perspectives
 
-2. **Run the setup-plan script** `{SCRIPT}` to prepare the plan file and directories.
+    - If on a feature branch, use the current branch
+    - Determine the feature directory path: `specs/[FEATURE-NUMBER]-[FEATURE-NAME]`
+    - Validate that the spec file exists: `specs/[BRANCH]/spec.md`
+    - Validate that the spec has been reviewed from team perspectives
 
-3. **Extract key information from the specification**:
-   - User stories and acceptance scenarios
-   - Functional requirements
-   - Success criteria
-   - Team persona perspectives and validations
-   - Key entities and data models
-   - Constraints and assumptions
+1. **Run the setup-plan script** `{SCRIPT}` to prepare the plan file and directories.
 
-4. **Generate implementation plan incorporating all team persona input**:
+1. **Extract key information from the specification**:
 
-   a. **Product Manager Input**:
-      - Technical decision impact assessment
-      - Success metrics alignment strategy
-      - Risk considerations and mitigation
+    - User stories and acceptance scenarios
+    - Functional requirements
+    - Success criteria
+    - Team persona perspectives and validations
+    - Key entities and data models
+    - Constraints and assumptions
 
-   b. **Technical Architect Input**:
-      - Architecture decisions and patterns
-      - Feasibility validation confirmation
-      - Technical constraint resolution
-      - Performance and scalability planning
+1. **Generate implementation plan incorporating all team persona input**:
 
-   c. **UX Designer Input**:
-      - User experience implementation approach
-      - Design system integration plan
-      - Accessibility implementation strategy
+    a. **Product Manager Input**:
 
-   d. **Quality Assurance Input**:
-      - Testing strategy and approach
-      - Quality gates and checkpoints definition
-      - Risk assessment and mitigation planning
+    - Technical decision impact assessment
+    - Success metrics alignment strategy
+    - Risk considerations and mitigation
 
-   e. **Developer Input**:
-      - Implementation approach and methodology
-      - Code quality standards and practices
-      - Performance optimization planning
+    b. **Technical Architect Input**:
 
-   f. **DevOps Input**:
-      - Deployment strategy and approach
-      - Infrastructure requirements and setup
-      - Operational considerations and monitoring
+    - Architecture decisions and patterns
+    - Feasibility validation confirmation
+    - Technical constraint resolution
+    - Performance and scalability planning
 
-5. **Define project structure** based on team requirements:
-   - Select appropriate structure (single project, web app, mobile + API, etc.)
-   - Document structure decision with team validation
+    c. **UX Designer Input**:
 
-6. **Create team implementation phases**:
-   - Phase 0: Research with assigned team member and deliverables
-   - Phase 1: Design with assigned team member and deliverables
-   - Phase 2: Implementation Planning with assigned team member and deliverables
+    - User experience implementation approach
+    - Design system integration plan
+    - Accessibility implementation strategy
 
-7. **Document complexity tracking** if constitution check violations exist:
-   - List each violation with justification
-   - Document simpler alternatives rejected
-   - Include team validation for each justification
+    d. **Quality Assurance Input**:
 
-8. **Create team risk assessment**:
-   - Identify risks from each team persona perspective
-   - Assess probability and impact of each risk
-   - Define mitigation strategies
+    - Testing strategy and approach
+    - Quality gates and checkpoints definition
+    - Risk assessment and mitigation planning
 
-9. **Define team success criteria**:
-   - Technical success metrics aligned with all team personas
-   - Team collaboration success metrics
-   - Delivery success metrics with team input
+    e. **Developer Input**:
 
-10. **Write the implementation plan** to `specs/[BRANCH]/plan.md` using the team template structure, incorporating all team persona input.
+    - Implementation approach and methodology
+    - Code quality standards and practices
+    - Performance optimization planning
+
+    f. **DevOps Input**:
+
+    - Deployment strategy and approach
+    - Infrastructure requirements and setup
+    - Operational considerations and monitoring
+
+1. **Define project structure** based on team requirements:
+
+    - Select appropriate structure (single project, web app, mobile + API, etc.)
+    - Document structure decision with team validation
+
+1. **Create team implementation phases**:
+
+    - Phase 0: Research with assigned team member and deliverables
+    - Phase 1: Design with assigned team member and deliverables
+    - Phase 2: Implementation Planning with assigned team member and deliverables
+
+1. **Document complexity tracking** if constitution check violations exist:
+
+    - List each violation with justification
+    - Document simpler alternatives rejected
+    - Include team validation for each justification
+
+1. **Create team risk assessment**:
+
+    - Identify risks from each team persona perspective
+    - Assess probability and impact of each risk
+    - Define mitigation strategies
+
+1. **Define team success criteria**:
+
+    - Technical success metrics aligned with all team personas
+    - Team collaboration success metrics
+    - Delivery success metrics with team input
+
+1. **Write the implementation plan** to `specs/[BRANCH]/plan.md` using the team template structure, incorporating all
+    team persona input.
 
 ## Script Usage
 
 Run the setup-plan script to initialize the plan structure:
+
 - Bash example: `{SCRIPT}`
 - PowerShell example: `{SCRIPT}`
 
 The script will:
+
 - Create the plan.md file
 - Set up necessary directories
 - Prepare placeholders for team persona information
@@ -112,16 +131,19 @@ The script will:
 ## Team Implementation Phases
 
 ### Phase 0: Research
+
 - **Research Lead**: Team member responsible
 - **Deliverables**: research.md with team input
 - **Team Involvement**: All relevant team members contribute research
 
 ### Phase 1: Design
-- **Design Lead**: Team member responsible  
+
+- **Design Lead**: Team member responsible
 - **Deliverables**: data-model.md, quickstart.md, contracts/, personas/, checklists/
 - **Team Involvement**: All relevant team members contribute design elements
 
 ### Phase 2: Implementation Planning
+
 - **Implementation Lead**: Team member responsible
 - **Deliverables**: tasks.md (generated by /team.tasks)
 - **Team Involvement**: All relevant team members contribute task planning
@@ -129,8 +151,9 @@ The script will:
 ## Team Validation Requirements
 
 Each section of the plan must be validated by the relevant team personas:
+
 - Technical decisions validated by Technical Architect
-- UX requirements validated by UX Designer  
+- UX requirements validated by UX Designer
 - Quality requirements validated by Quality Assurance
 - Business requirements validated by Product Manager
 - Implementation approach validated by Developer
@@ -139,12 +162,12 @@ Each section of the plan must be validated by the relevant team personas:
 ## Output Requirements
 
 1. Create comprehensive implementation plan in `specs/[BRANCH]/plan.md`
-2. Include all team persona perspectives and inputs
-3. Define clear team responsibilities and roles
-4. Document risk assessment with team input
-5. Define success criteria aligned with all team personas
-6. Create project structure plan with team validation
-7. Update agent context with new plan information
+1. Include all team persona perspectives and inputs
+1. Define clear team responsibilities and roles
+1. Document risk assessment with team input
+1. Define success criteria aligned with all team personas
+1. Create project structure plan with team validation
+1. Update agent context with new plan information
 
 ## Guidelines
 
