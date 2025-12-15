@@ -17,8 +17,8 @@
     <a href="https://github.com/Nom-nom-hub/dev-team-methodology/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/Nom-nom-hub/dev-team-methodology" alt="License"/>
     </a>
-    <a href="https://github.github.io/dev-team-methodology/">
-        <img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Documentation"/>
+    <a href="https://github.com/Nom-nom-hub/dev-team-methodology/tree/main/docs">
+        <img src="https://img.shields.io/badge/docs-Learn_More-blue" alt="Documentation"/>
     </a>
 </p>
 
@@ -373,7 +373,14 @@ If you encounter issues with an agent, please open an issue so we can refine the
 
 ## 📖 Learn More
 
-- **[Complete Team-Driven Development Methodology](./team-driven.md)** - Deep dive into the full process
+### Getting Started
+- **[Quick Start Guide](./docs/QUICK-START.md)** - 5-minute setup guide
+- **[FAQ](./docs/FAQ.md)** - Common questions and answers
+- **[Troubleshooting](./docs/TROUBLESHOOTING.md)** - Solutions for common issues
+
+### Deep Dives
+- **[Complete Team-Driven Development Methodology](./team-driven.md)** - Full philosophy and principles
+- **[Agent Capabilities Comparison](./docs/AGENT-CAPABILITIES.md)** - Which agent for which task
 - **[Detailed Walkthrough](#detailed-process)** - Step-by-step implementation guide
 
 ### Detailed Process

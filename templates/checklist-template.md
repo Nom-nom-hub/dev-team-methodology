@@ -1,3 +1,14 @@
+<!--
+TEMPLATE METADATA
+  Name: Team Feature Checklist Template
+  Version: 1.0
+  Purpose: Provide cross-functional validation checklist for team review
+  Last Updated: 2025-12-15
+  Compatibility: Team Methodology v1.0+
+  Usage: Used by /team.checklist command; used with specifications and plans
+  See Also: spec-template.md, plan-template.md
+-->
+
 # Team Feature Checklist: [FEATURE]
 
 **Branch**: `[###-feature-name]` | **Date**: [DATE] **Input**: Feature specification from

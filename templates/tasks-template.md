@@ -1,3 +1,14 @@
+<!--
+TEMPLATE METADATA
+  Name: Team Implementation Tasks Template
+  Version: 1.0
+  Purpose: Break down implementation plans into actionable team tasks
+  Last Updated: 2025-12-15
+  Compatibility: Team Methodology v1.0+
+  Usage: Used by /team.tasks command; requires completed plan
+  See Also: plan-template.md, spec-template.md
+-->
+
 # Team Implementation Tasks: [FEATURE]
 
 **Branch**: `[###-feature-name]` | **Date**: [DATE] | **Plan**: [link] **Input**: Implementation plan from

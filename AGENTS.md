@@ -60,13 +60,91 @@ When implementing the Team Methodology:
 
 ## Agent-Specific Instructions
 
-Different AI agents may have specific configurations:
+Different AI agents have specific configurations and optimized workflows:
 
-- Claude: Uses `.claude/commands/` directory
-- Copilot: Uses `.github/agents/` directory
-- Cursor: Uses `.cursor/commands/` directory
-- Qwen: Uses `.qwen/commands/` directory
-- And others...
+### Claude
+- **Location**: `.claude/commands/` directory for custom instructions
+- **Strengths**: Multi-perspective reasoning, detailed planning, excellent documentation
+- **Best for**: `/team.specify`, `/team.review`, `/team.plan`
+- **Context**: 200k tokens (sufficient for large features)
+- **Setup**: Install Claude Code; runs team commands natively with full context
 
-Each agent will have team methodology commands available in their respective directories when the template packages are
-installed.
+### Amp
+- **Location**: `.amp/` directory for configuration (if present)
+- **Strengths**: Fast code generation, multi-file handling, context switching
+- **Best for**: `/team.tasks`, `/team.implement`, code review phases
+- **Context**: Varies by usage tier; excellent for rapid iteration
+- **Setup**: Works in free mode with ads; no special installation needed
+- **Amp-Specific Optimization Tips**:
+  - Use Amp after Claude has established specification and plan
+  - Amp excels at reading existing code and generating compatible implementations
+  - Leverage multi-file awareness for cross-module changes and refactoring
+  - Effective for code review with fresh perspective
+  - Fast context switching between features and components
+  - Good for rapid iteration and small refinements
+
+### Cursor
+- **Location**: `.cursor/commands/` directory
+- **Strengths**: IDE integration, file-aware refactoring, real-time feedback
+- **Best for**: `/team.implement`, refactoring, local code modifications
+- **Context**: 180k tokens with IDE file context
+- **Setup**: Cursor Agent with slash commands enabled
+
+### GitHub Copilot
+- **Location**: `.github/agents/` directory
+- **Strengths**: GitHub Actions integration, accessibility, editor integration
+- **Best for**: Code completion, smaller implementation tasks
+- **Context**: 128k tokens
+- **Note**: Limited context for `/team.specify` and `/team.plan`; best used in implementation phase
+
+### Gemini
+- **Location**: `.gemini/` directory (if configured)
+- **Strengths**: Massive context window (2M tokens), cost-effective, good exploration
+- **Best for**: Large features, comprehensive specifications, design exploration
+- **Context**: 2M tokens (largest of all agents)
+- **Setup**: Google Gemini API integration
+
+### Other Agents (Qwen, Qoder, CodeBuddy, Roo, SHAI, etc.)
+- **Location**: Agent-specific configuration directories created during `team init`
+- **Setup**: Run `team init . --ai <agent-name>` to configure
+- **See**: [AGENT-CAPABILITIES.md](./docs/AGENT-CAPABILITIES.md) for detailed comparison
+
+### Recommended Agent Pairings by Workflow Phase
+
+| Phase | Primary | Secondary | Rationale |
+|-------|---------|-----------|-----------|
+| Specify | Claude | Gemini | Need reasoning about user value and feasibility |
+| Review | Amp | Claude | Fresh perspective on specifications |
+| Plan | Claude | Gemini | Architecture and technical decisions |
+| Tasks | Amp | Claude | Speed valuable for task generation |
+| Implement | Amp, Cursor | Claude | Speed and code quality essential |
+| Refactor | Cursor | Amp | IDE integration or fast multi-file changes |
+
+### Cross-Agent Workflows
+
+Teams can switch agents between phases without losing context. All artifacts are **plain markdown** and **agent-agnostic**:
+
+```
+Project: 001-feature-name/
+├── spec.md (created with Claude)
+├── plan.md (created with Claude)
+├── tasks.md (created with Amp)
+├── implementation/ (created with Cursor + Amp)
+└── refactoring/ (improved with Cursor)
+```
+
+**Any agent can**:
+- Read and understand existing specs, plans, and code
+- Generate new tasks or implementation based on artifacts
+- Review and refactor code from other agents
+- Continue work started by another agent
+
+### Best Practices for Agent Switching
+
+1. **Keep artifacts in plain markdown** - No proprietary formats
+2. **Provide context** - When switching agents, paste relevant sections of specs/plans
+3. **Leverage strengths** - Use each agent where it excels most
+4. **Validate transitions** - Run `/team.analyze` after agent hand-offs to catch inconsistencies
+5. **Document decisions** - In `decision-log.md` when changing agents or approaches
+
+Each agent will have team methodology commands available in their respective directories when the template packages are installed.

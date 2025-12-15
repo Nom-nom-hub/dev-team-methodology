@@ -9,19 +9,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
-- Initial release of the Team-Driven Development methodology
-- Core CLI tool with team-focused commands
-- Team persona framework with 6 defined roles
-- Specification template with team input sections
-- Implementation plan template with team perspectives
-- Task breakdown template with team ownership
-- Validation checklist template for team review
-- GitHub Actions for release automation
-- Slash command templates for all team methodologies
+- Documentation index (docs/INDEX.md) for easy navigation
+- Quick start guide (5-minute setup)
+- Comprehensive FAQ (40+ questions answered)
+- Troubleshooting guide (40+ solutions)
+- Agent capabilities comparison matrix
+- Complete first example (simple todo list with full walkthrough)
+- Template metadata versioning (all templates now have version comments)
+- Architecture decision log template for recording technical decisions
+- Implementation log template for progress tracking
+- GitHub Actions workflow for automated template validation
+- Python validation script for template compliance
+- Amp-specific optimization guide for using Amp effectively
+- Amp integration tips in AGENTS.md
 
 ### Changed
 
-- N/A
+- Updated AGENTS.md with expanded Amp optimization tips
+- Enhanced docs/INDEX.md with cross-references and learning paths
+- All templates now include metadata headers with version, purpose, and usage info
 
 ### Deprecated
 
@@ -33,7 +39,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
-- N/A
+- Fixed broken documentation links in README.md
+- Corrected cross-references throughout documentation
 
 ### Security
 

@@ -1,3 +1,14 @@
+<!--
+TEMPLATE METADATA
+  Name: Team Implementation Plan Template
+  Version: 1.0
+  Purpose: Create technical implementation plans considering team perspectives
+  Last Updated: 2025-12-15
+  Compatibility: Team Methodology v1.0+
+  Usage: Used by /team.plan command; requires completed specification
+  See Also: spec-template.md, tasks-template.md
+-->
+
 # Team Implementation Plan: [FEATURE]
 
 **Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link] **Input**: Feature specification from

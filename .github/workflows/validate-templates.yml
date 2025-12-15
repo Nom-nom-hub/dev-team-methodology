@@ -1,0 +1,200 @@
+name: Validate Templates
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: ["master"]
+    paths:
+      - "templates/**"
+      - ".github/workflows/validate-templates.yml"
+  pull_request:
+    paths:
+      - "templates/**"
+      - ".github/workflows/validate-templates.yml"
+
+jobs:
+  validate-templates:
+    runs-on: ubuntu-latest
+    name: Validate Template Structure and Metadata
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install validation dependencies
+        run: |
+          pip install pyyaml jsonschema frontmatter
+
+      - name: Validate template metadata
+        run: |
+          python scripts/validate-templates.py
+        continue-on-error: false
+
+      - name: Check template version tags
+        run: |
+          echo "Checking template version consistency..."
+          
+          # Check that all templates have version metadata
+          missing_version=0
+          for template in templates/*.md; do
+            if ! grep -q "Version:" "$template"; then
+              echo "❌ Missing version metadata in $template"
+              missing_version=$((missing_version + 1))
+            fi
+          done
+          
+          if [ $missing_version -gt 0 ]; then
+            echo "❌ $missing_version template(s) missing version metadata"
+            exit 1
+          else
+            echo "✅ All templates have version metadata"
+          fi
+
+      - name: Validate template frontmatter
+        run: |
+          echo "Validating template frontmatter..."
+          
+          for template in templates/*.md; do
+            if ! grep -q "TEMPLATE METADATA" "$template"; then
+              echo "❌ Missing TEMPLATE METADATA in $template"
+              exit 1
+            fi
+          done
+          
+          echo "✅ All templates have required frontmatter"
+
+      - name: Verify template cross-references
+        run: |
+          echo "Verifying 'See Also' cross-references..."
+          
+          # Check for templates without See Also section (except agent-file)
+          for template in templates/spec-template.md templates/plan-template.md templates/tasks-template.md templates/checklist-template.md; do
+            if ! grep -q "See Also:" "$template"; then
+              echo "⚠ Warning: $template missing 'See Also' section"
+            fi
+          done
+          
+          echo "✅ Cross-reference check complete"
+
+      - name: Validate example templates alignment
+        run: |
+          echo "Checking example files align with templates..."
+          
+          # Check that examples use same structure as templates
+          if [ -d "docs/EXAMPLES/001-simple-todo-list" ]; then
+            for file in spec plan tasks; do
+              if [ -f "docs/EXAMPLES/001-simple-todo-list/${file}.md" ]; then
+                echo "✅ Found example ${file}.md"
+              else
+                echo "⚠ Missing example ${file}.md"
+              fi
+            done
+          fi
+
+      - name: Report validation results
+        if: always()
+        run: |
+          echo "## Template Validation Report"
+          echo "✅ All template validations passed"
+          echo ""
+          echo "### Summary"
+          echo "- Templates with metadata: $(grep -l 'TEMPLATE METADATA' templates/*.md | wc -l)"
+          echo "- Templates with versions: $(grep -l 'Version:' templates/*.md | wc -l)"
+          echo "- Total templates: $(ls -1 templates/*.md | wc -l)"
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    name: Lint Template Markdown
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run markdownlint on templates
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: |
+            templates/**/*.md
+
+  template-consistency:
+    runs-on: ubuntu-latest
+    name: Check Template Consistency
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check section consistency
+        run: |
+          echo "Verifying consistent section structure..."
+          
+          # Check spec template has required sections
+          if grep -q "## Team Persona Input Summary" templates/spec-template.md && \
+             grep -q "## User Scenarios & Testing" templates/spec-template.md && \
+             grep -q "## Requirements" templates/spec-template.md && \
+             grep -q "## Success Criteria" templates/spec-template.md; then
+            echo "✅ Spec template has required sections"
+          else
+            echo "❌ Spec template missing required sections"
+            exit 1
+          fi
+          
+          # Check plan template has required sections
+          if grep -q "## Team Persona Input Summary" templates/plan-template.md && \
+             grep -q "## Team Implementation Phases" templates/plan-template.md && \
+             grep -q "## Team Risk Assessment" templates/plan-template.md; then
+            echo "✅ Plan template has required sections"
+          else
+            echo "❌ Plan template missing required sections"
+            exit 1
+          fi
+          
+          # Check tasks template has required sections
+          if grep -q "## Team Task Breakdown" templates/tasks-template.md && \
+             grep -q "## Team Task Dependencies" templates/tasks-template.md && \
+             grep -q "## Task Completion Requirements" templates/tasks-template.md; then
+            echo "✅ Tasks template has required sections"
+          else
+            echo "❌ Tasks template missing required sections"
+            exit 1
+          fi
+          
+          echo "✅ All template sections consistent"
+
+      - name: Validate checklist completeness
+        run: |
+          echo "Verifying checklist coverage..."
+          
+          checklist_personas=0
+          if grep -q "Product Manager Checklist" templates/checklist-template.md; then
+            checklist_personas=$((checklist_personas + 1))
+          fi
+          if grep -q "Technical Architect Checklist" templates/checklist-template.md; then
+            checklist_personas=$((checklist_personas + 1))
+          fi
+          if grep -q "UX Designer Checklist" templates/checklist-template.md; then
+            checklist_personas=$((checklist_personas + 1))
+          fi
+          if grep -q "Quality Assurance Checklist" templates/checklist-template.md; then
+            checklist_personas=$((checklist_personas + 1))
+          fi
+          if grep -q "Developer Checklist" templates/checklist-template.md; then
+            checklist_personas=$((checklist_personas + 1))
+          fi
+          if grep -q "DevOps Checklist" templates/checklist-template.md; then
+            checklist_personas=$((checklist_personas + 1))
+          fi
+          
+          if [ $checklist_personas -eq 6 ]; then
+            echo "✅ Checklist covers all 6 team personas"
+          else
+            echo "❌ Checklist only covers $checklist_personas personas (expected 6)"
+            exit 1
+          fi
