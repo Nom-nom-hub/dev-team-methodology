@@ -111,13 +111,13 @@ will guide all subsequent development.
 /team.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements. Define team roles and responsibilities.
 ```
 
-### 3. Establish team personas
+### 3. Review team personas
 
-Use the **`/team.personas`** command to define the professional team roles that will contribute to the development
+Use the **`/team.personas`** command to review and understand the six standard team personas that contribute to the development
 process.
 
 ```bash
-/team.personas Define the team personas for this project: Product Manager, Technical Architect, UX Designer, Quality Assurance, Developer, DevOps Engineer. Describe their specific responsibilities and contribution areas.
+/team.personas
 ```
 
 ### 4. Create the spec collaboratively
@@ -453,17 +453,17 @@ helps ensure consistent decision-making throughout all subsequent development ph
 This step creates or updates the `.team/memory/constitution.md` file with your project's foundational guidelines that
 the AI agent will reference during specification, planning, and implementation phases.
 
-### **STEP 2:** Define team personas
+### **STEP 2:** Review team personas
 
-With your project principles established, define the professional team personas that will contribute to the development
-process. Use the `/team.personas` command to define the roles, responsibilities, and perspectives of each team member:
+With your project principles established, review the six standard team personas that will contribute to the development
+process. Use the `/team.personas` command to understand the roles, responsibilities, and perspectives of each team member:
 
 ```text
-/team.personas Define the team personas for this project: Product Manager, Technical Architect, UX Designer, Quality Assurance, Developer, DevOps Engineer. Describe their specific responsibilities and contribution areas.
+/team.personas
 ```
 
-This creates the `.team/personas/` directory with detailed descriptions for each persona, their focus areas, and how
-they'll contribute to the development process.
+This explains the `.team/personas/` directory with detailed descriptions for each persona, their focus areas, and how
+they contribute to the development process.
 
 ### **STEP 3:** Create project specifications collaboratively
 
