@@ -1,14 +1,3 @@
-<!--
-TEMPLATE METADATA
-  Name: AI Agent Context Template
-  Version: 1.0
-  Purpose: Provide AI agents with consolidated project context for team-driven development
-  Last Updated: 2025-12-15
-  Compatibility: Team Methodology v1.0+, All supported AI agents
-  Usage: Auto-generated for AI agent context; not manually edited
-  See Also: All other templates, AGENTS.md
--->
-
 # AI Agent Context for Team Methodology
 
 **Project**: [PROJECT NAME] **Last updated**: [DATE] **Context**: Team-driven development with cross-functional

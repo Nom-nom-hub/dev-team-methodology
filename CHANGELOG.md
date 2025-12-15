@@ -15,19 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Troubleshooting guide (40+ solutions)
 - Agent capabilities comparison matrix
 - Complete first example (simple todo list with full walkthrough)
-- Template metadata versioning (all templates now have version comments)
-- Architecture decision log template for recording technical decisions
-- Implementation log template for progress tracking
-- GitHub Actions workflow for automated template validation
-- Python validation script for template compliance
-- Amp-specific optimization guide for using Amp effectively
-- Amp integration tips in AGENTS.md
 
 ### Changed
 
-- Updated AGENTS.md with expanded Amp optimization tips
 - Enhanced docs/INDEX.md with cross-references and learning paths
-- All templates now include metadata headers with version, purpose, and usage info
 
 ### Deprecated
 

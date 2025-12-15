@@ -1,13 +1,3 @@
-<!--
-TEMPLATE METADATA
-  Name: Team Feature Specification Template
-  Version: 1.0
-  Purpose: Create baseline feature specifications with input from all team personas
-  Last Updated: 2025-12-15
-  Compatibility: Team Methodology v1.0+
-  Usage: Used by /team.specify and /team.review commands
--->
-
 # Team Feature Specification: [FEATURE NAME]
 
 **Feature Branch**: `[###-feature-name]` **Created**: [DATE] **Status**: Draft **Input**: User description: "$ARGUMENTS"
