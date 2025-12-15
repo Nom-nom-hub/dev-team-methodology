@@ -193,4 +193,3 @@ Ready to build your first feature?
 - [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Problem solving
 - [team-driven.md](../team-driven.md) - Full methodology
 - [CONTRIBUTING.md](../CONTRIBUTING.md) - Contributing examples
-

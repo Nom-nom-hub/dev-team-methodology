@@ -665,4 +665,3 @@ Regenerate plan/tasks
 5. **Document decisions** - Why did you choose X over Y?
 6. **Use consistent naming** - Follow WORKFLOW-VARIABLES.md
 7. **Iterate frequently** - Small changes are easier to fix than large ones
-
