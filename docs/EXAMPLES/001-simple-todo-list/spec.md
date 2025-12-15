@@ -8,7 +8,9 @@
 
 ## Overview
 
-Build a simple, single-user todo list application that allows users to manage tasks with different statuses. This is an MVP (Minimum Viable Product) focused on core CRUD operations with persistent local storage.
+Build a simple, single-user todo list application that allows users to manage tasks
+with different statuses. This is an MVP (Minimum Viable Product) focused on core CRUD
+operations with persistent local storage.
 
 ---
 

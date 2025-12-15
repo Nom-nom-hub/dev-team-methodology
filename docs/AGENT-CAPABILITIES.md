@@ -215,27 +215,27 @@ Any agent can pick up where another left off
 
 ## Known Limitations
 
-#### Claude
+### Claude
 
 - ❌ Cannot see file tree directly (requires manual file context)
 - ✅ Workaround: Paste file paths or use Claude Code with project context
 
-#### Amp
+### Amp
 
 - ❌ Context length varies by usage tier
 - ✅ Workaround: Break large features into smaller specs
 
-#### Cursor
+### Cursor
 
 - ❌ Limited context outside current IDE workspace
 - ✅ Workaround: Use for local refactoring, other agents for cross-repo work
 
-#### Copilot
+### Copilot
 
 - ❌ Limited context in `/team.specify` and `/team.plan`
 - ✅ Workaround: Use Claude for planning, Copilot for implementation
 
-#### Gemini
+### Gemini
 
 - ❌ Large context sometimes confuses reasoning
 - ✅ Workaround: Be specific in prompts; limit to focused tasks

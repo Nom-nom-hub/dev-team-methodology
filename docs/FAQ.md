@@ -82,7 +82,10 @@ Don't treat first-generation specs as final. They're v0.1.
 > "Create file X with class Y implementing interface Z with methods A, B, C using pattern..."
 
 **JUST RIGHT:**
-> "Implement JWT-based authentication using Auth0 library. Store tokens in localStorage. Validate on page load and API requests. Handle refresh token flow. Fallback for missing tokens."
+
+> "Implement JWT-based authentication using Auth0 library. Store tokens in localStorage.
+> Validate on page load and API requests. Handle refresh token flow. Fallback for missing
+> tokens."
 
 **Rule:** Someone reading the plan should know what to code without reading the spec again.
 

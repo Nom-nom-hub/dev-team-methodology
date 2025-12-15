@@ -8,18 +8,22 @@
     "code_blocks": false,
     "tables": false
   },
+  "MD009": false,
   "MD022": false,
   "MD024": {
     "siblings_only": true
   },
   "MD026": false,
   "MD029": false,
+  "MD031": false,
   "MD032": false,
   "MD033": {
     "allowed_elements": [
       "br", "div", "img", "h1", "h3", "p", "strong", "a", "em", "details", "summary", "ul", "li"
     ]
   },
+  "MD034": false,
+  "MD036": false,
   "MD040": false,
   "MD041": false
 }

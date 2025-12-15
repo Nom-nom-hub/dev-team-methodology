@@ -7,7 +7,8 @@
 
 ## Overview
 
-This example walks through building a simple Todo List application from initial idea to working code. We'll follow the complete Team-Driven Development workflow:
+This example walks through building a simple Todo List application from initial idea
+to working code. We'll follow the complete Team-Driven Development workflow:
 
 1. **Specify** - Define what we're building
 2. **Review** - Get team feedback  
