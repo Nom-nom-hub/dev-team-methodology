@@ -111,57 +111,59 @@ Choose the right AI agent for your Team-Driven Development workflow.
 ## Workflow Recommendations
 
 ### Small Team, Single Feature
-**Recommended: Claude + Amp**
+
+Recommended: Claude + Amp
+
 - Claude: `/team.specify`, `/team.review`, `/team.plan`
 - Amp: `/team.tasks`, `/team.implement`, testing
 
-**Rationale:** Claude excels at planning; Amp accelerates implementation.
-
----
+Rationale: Claude excels at planning; Amp accelerates implementation.
 
 ### Large Team, Multiple Features
-**Recommended: Claude + Cursor + Amp**
+
+Recommended: Claude + Cursor + Amp
+
 - Claude: Specification and planning (async)
 - Cursor: Implementation and refactoring (real-time in IDE)
 - Amp: Code review and testing (fresh perspective)
 
-**Rationale:** Parallelize across team; each agent optimized for their phase.
-
----
+Rationale: Parallelize across team; each agent optimized for their phase.
 
 ### Rapid Prototyping
-**Recommended: Amp + Cursor**
+
+Recommended: Amp + Cursor
+
 - Amp: Fast spec and plan generation
 - Cursor: Immediate IDE feedback and refactoring
 
-**Rationale:** Speed matters more than polish.
-
----
+Rationale: Speed matters more than polish.
 
 ### Quality-First (Financial/Healthcare)
-**Recommended: Claude + Qoder**
+
+Recommended: Claude + Qoder
+
 - Claude: Comprehensive planning with safety focus
 - Qoder: Accurate implementation and rigorous testing
 
-**Rationale:** Accuracy and reasoning over speed.
-
----
+Rationale: Accuracy and reasoning over speed.
 
 ### Learning/Educational
-**Recommended: Claude (primarily)**
+
+Recommended: Claude (primarily)
+
 - Claude: Excellent explanations of decisions
 - Pair with: Cursor or Amp for implementation
 
-**Rationale:** Claude explains the "why" effectively.
-
----
+Rationale: Claude explains the "why" effectively.
 
 ### Brownfield/Refactoring
-**Recommended: Cursor (primary) + Claude (planning)**
+
+Recommended: Cursor (primary) + Claude (planning)
+
 - Cursor: Real-time IDE refactoring and safety
 - Claude: Big-picture refactoring strategy
 
-**Rationale:** Cursor sees your actual code; Claude sees the architecture.
+Rationale: Cursor sees your actual code; Claude sees the architecture.
 
 ---
 
@@ -199,7 +201,7 @@ Choose the right AI agent for your Team-Driven Development workflow.
 
 Team-Driven Development is **agent-agnostic**. All artifacts are plain markdown:
 
-```
+```text
 Workflow: Claude for spec → Amp for implementation → Cursor for refactoring
 ↓
 All artifacts remain in specs/ directory
@@ -213,23 +215,28 @@ Any agent can pick up where another left off
 
 ## Known Limitations
 
-### Claude
+#### Claude
+
 - ❌ Cannot see file tree directly (requires manual file context)
 - ✅ Workaround: Paste file paths or use Claude Code with project context
 
-### Amp
+#### Amp
+
 - ❌ Context length varies by usage tier
 - ✅ Workaround: Break large features into smaller specs
 
-### Cursor
+#### Cursor
+
 - ❌ Limited context outside current IDE workspace
 - ✅ Workaround: Use for local refactoring, other agents for cross-repo work
 
-### Copilot
+#### Copilot
+
 - ❌ Limited context in `/team.specify` and `/team.plan`
 - ✅ Workaround: Use Claude for planning, Copilot for implementation
 
-### Gemini
+#### Gemini
+
 - ❌ Large context sometimes confuses reasoning
 - ✅ Workaround: Be specific in prompts; limit to focused tasks
 

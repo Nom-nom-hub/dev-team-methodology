@@ -63,6 +63,7 @@ When implementing the Team Methodology:
 Different AI agents have specific configurations and optimized workflows:
 
 ### Claude
+
 - **Location**: `.claude/commands/` directory for custom instructions
 - **Strengths**: Multi-perspective reasoning, detailed planning, excellent documentation
 - **Best for**: `/team.specify`, `/team.review`, `/team.plan`
@@ -70,6 +71,7 @@ Different AI agents have specific configurations and optimized workflows:
 - **Setup**: Install Claude Code; runs team commands natively with full context
 
 ### Amp
+
 - **Location**: `.amp/` directory for configuration (if present)
 - **Strengths**: Fast code generation, multi-file handling, context switching
 - **Best for**: `/team.tasks`, `/team.implement`, code review phases
@@ -84,6 +86,7 @@ Different AI agents have specific configurations and optimized workflows:
   - Good for rapid iteration and small refinements
 
 ### Cursor
+
 - **Location**: `.cursor/commands/` directory
 - **Strengths**: IDE integration, file-aware refactoring, real-time feedback
 - **Best for**: `/team.implement`, refactoring, local code modifications
@@ -91,6 +94,7 @@ Different AI agents have specific configurations and optimized workflows:
 - **Setup**: Cursor Agent with slash commands enabled
 
 ### GitHub Copilot
+
 - **Location**: `.github/agents/` directory
 - **Strengths**: GitHub Actions integration, accessibility, editor integration
 - **Best for**: Code completion, smaller implementation tasks
@@ -98,6 +102,7 @@ Different AI agents have specific configurations and optimized workflows:
 - **Note**: Limited context for `/team.specify` and `/team.plan`; best used in implementation phase
 
 ### Gemini
+
 - **Location**: `.gemini/` directory (if configured)
 - **Strengths**: Massive context window (2M tokens), cost-effective, good exploration
 - **Best for**: Large features, comprehensive specifications, design exploration
@@ -105,6 +110,7 @@ Different AI agents have specific configurations and optimized workflows:
 - **Setup**: Google Gemini API integration
 
 ### Other Agents (Qwen, Qoder, CodeBuddy, Roo, SHAI, etc.)
+
 - **Location**: Agent-specific configuration directories created during `team init`
 - **Setup**: Run `team init . --ai <agent-name>` to configure
 - **See**: [AGENT-CAPABILITIES.md](./docs/AGENT-CAPABILITIES.md) for detailed comparison
@@ -124,7 +130,7 @@ Different AI agents have specific configurations and optimized workflows:
 
 Teams can switch agents between phases without losing context. All artifacts are **plain markdown** and **agent-agnostic**:
 
-```
+```text
 Project: 001-feature-name/
 ├── spec.md (created with Claude)
 ├── plan.md (created with Claude)
@@ -142,9 +148,9 @@ Project: 001-feature-name/
 ### Best Practices for Agent Switching
 
 1. **Keep artifacts in plain markdown** - No proprietary formats
-2. **Provide context** - When switching agents, paste relevant sections of specs/plans
-3. **Leverage strengths** - Use each agent where it excels most
-4. **Validate transitions** - Run `/team.analyze` after agent hand-offs to catch inconsistencies
-5. **Document decisions** - In `decision-log.md` when changing agents or approaches
+1. **Provide context** - When switching agents, paste relevant sections of specs/plans
+1. **Leverage strengths** - Use each agent where it excels most
+1. **Validate transitions** - Run `/team.analyze` after agent hand-offs to catch inconsistencies
+1. **Document decisions** - In `decision-log.md` when changing agents or approaches
 
 Each agent will have team methodology commands available in their respective directories when the template packages are installed.

@@ -5,16 +5,19 @@ This directory contains real, completed examples of Team-Driven Development feat
 ## 📚 Available Examples
 
 ### Example 1: Simple Todo List Application
-**Location:** `EXAMPLES/001-simple-todo-list/`
 
-**What it demonstrates:**
+Location: `EXAMPLES/001-simple-todo-list/`
+
+What it demonstrates:
+
 - Complete workflow from specification to implementation
 - How to structure a feature specification
 - Technical planning with team input
 - Task breakdown and execution
 - Lessons learned and decisions made
 
-**Files included:**
+Files included:
+
 - `WALKTHROUGH.md` - Step-by-step walkthrough of the feature
 - `spec.md` - Complete specification with all personas
 - `plan.md` - Implementation plan
@@ -22,9 +25,10 @@ This directory contains real, completed examples of Team-Driven Development feat
 - `decision-log.md` - Key architectural decisions
 - `LESSONS-LEARNED.md` - What went well, what to improve
 
-**Estimated reading time:** 20 minutes for full walkthrough
+Estimated reading time: 20 minutes for full walkthrough
 
-**Best for:**
+Best for:
+
 - First-time TDD users
 - Understanding the complete workflow
 - Learning how to structure specifications
@@ -115,13 +119,15 @@ After working through these examples, you should understand:
 
 ## ⚙️ Before You Copy Examples
 
-### Do: 
+### Do
+
 ✅ Use as templates for your own specifications  
 ✅ Adapt decision rationale to your context  
 ✅ Copy task structures for similar features  
 ✅ Reference as examples in team discussions  
 
-### Don't:
+### Don't
+
 ❌ Copy examples verbatim without adaptation  
 ❌ Assume your feature is exactly like the example  
 ❌ Use example tasks without your team's input  
