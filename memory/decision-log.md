@@ -1,6 +1,7 @@
 # Decision Log
 
-Running log of all architectural decisions made for this project. Each decision has an ADR (Architectural Decision Record) in `docs/adr/`.
+Running log of all architectural decisions made for this project. Each decision has an
+ADR (Architectural Decision Record) in `docs/adr/`.
 
 ---
 

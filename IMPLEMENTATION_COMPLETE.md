@@ -218,7 +218,8 @@ The methodology has been successfully enhanced to produce senior-level quality t
 4. ✅ Clear team responsibilities (personas per phase)
 5. ✅ Continuous learning (retrospectives, decision logs)
 
-**Result**: Teams that follow this methodology will produce higher-quality software with fewer bugs, better security, and higher confidence.
+**Result**: Teams that follow this methodology will produce higher-quality software with
+fewer bugs, better security, and higher confidence.
 
 ---
 

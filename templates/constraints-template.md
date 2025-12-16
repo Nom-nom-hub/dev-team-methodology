@@ -1,6 +1,7 @@
 # Constraints & Assumptions
 
-Use this document to capture all constraints and assumptions upfront. This prevents rework later when constraints are discovered mid-implementation.
+Use this document to capture all constraints and assumptions upfront. This prevents
+rework later when constraints are discovered mid-implementation.
 
 ---
 

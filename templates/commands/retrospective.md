@@ -2,7 +2,8 @@
 
 ## Purpose
 
-After a feature launches, conduct a structured retrospective to capture what went well, what could improve, and update team knowledge for next features.
+After a feature launches, conduct a structured retrospective to capture what went well,
+what could improve, and update team knowledge for next features.
 
 ## Usage
 

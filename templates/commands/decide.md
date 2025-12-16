@@ -2,7 +2,8 @@
 
 ## Purpose
 
-Document architectural and technical decisions with full context, alternatives, and trade-offs. Generates Architectural Decision Records (ADRs) for institutional memory.
+Document architectural and technical decisions with full context, alternatives, and
+trade-offs. Generates Architectural Decision Records (ADRs) for institutional memory.
 
 ## Usage
 

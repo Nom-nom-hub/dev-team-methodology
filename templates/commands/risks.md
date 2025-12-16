@@ -2,7 +2,8 @@
 
 ## Purpose
 
-Systematically identify failure scenarios, edge cases, and risks before implementation. Prevents surprises in testing and production.
+Systematically identify failure scenarios, edge cases, and risks before implementation.
+Prevents surprises in testing and production.
 
 ## Usage
 
