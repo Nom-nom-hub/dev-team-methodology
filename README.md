@@ -1,7 +1,8 @@
 <h1>👥 Professional Dev Team Methodology</h1>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Nom-nom-hub/dev-team-methodology/master/media/DTM.png" alt="Dev Team Methodology Logo" width="200"/>
+    <img src="https://raw.githubusercontent.com/Nom-nom-hub/dev-team-methodology/master/media/DTM.png"
+         alt="DTM Logo" width="200"/>
 </p>
 
 <h3><em>Build high-quality software with structured team collaboration.</em></h3>
