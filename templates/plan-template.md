@@ -58,6 +58,188 @@ Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLAR
 - **Infrastructure Needs**: [Infrastructure requirements defined]
 - **Operational Considerations**: [Operational requirements defined]
 
+---
+
+## Architecture Specification *(new)*
+
+<!--
+   ACTION REQUIRED: Define the system architecture in detail.
+   See templates/architecture-spec-template.md for detailed guidance.
+-->
+
+### System Components
+
+| Component | Responsibility | Technology |
+|-----------|-----------------|-----------|
+| [API Gateway] | [Route requests, auth] | [nginx, AWS ALB] |
+| [Database] | [Persistent storage] | [PostgreSQL 15] |
+| [Cache] | [Performance optimization] | [Redis 7] |
+
+### Component Interactions
+
+- [Client sends request to API Gateway]
+- [API Gateway routes to appropriate service]
+- [Service queries Database or Cache]
+- [Response returned to Client]
+
+### Database Schema
+
+- **[Table 1]**: [Columns: id, name, created_at]
+- **[Table 2]**: [Columns: id, user_id, content]
+- **Indexes**: [What's indexed and why]
+
+### API Contracts
+
+- **GET /api/[resource]**: [Returns list of resources]
+- **POST /api/[resource]**: [Creates new resource]
+- **Response format**: [JSON schema or example]
+
+### Configuration Management
+
+- **Environment variables**: [DATABASE_URL, API_KEY, etc.]
+- **Feature flags**: [Flags for gradual rollout]
+- **Secrets**: [Stored in Secrets Manager]
+
+### Deployment Architecture
+
+- **Containerization**: [Docker images, registries]
+- **Orchestration**: [Kubernetes clusters, replicas]
+- **Load balancing**: [How traffic is distributed]
+- **Scaling**: [Auto-scaling policies]
+
+---
+
+## Performance Budget *(new)*
+
+<!--
+   ACTION REQUIRED: Define performance targets and budgets.
+   See templates/performance-budget-template.md for detailed guidance.
+-->
+
+### Response Time Targets
+
+| Endpoint | p95 | p99 | Rationale |
+|----------|-----|-----|-----------|
+| [GET /api/users/{id}] | [50ms] | [200ms] | [Simple lookup] |
+| [GET /api/posts] | [150ms] | [500ms] | [List endpoint] |
+| [POST /api/posts] | [300ms] | [1000ms] | [Create operation] |
+
+### Throughput & Load
+
+- **Normal load**: [1000 concurrent users, 500 req/sec]
+- **Peak load**: [10,000 concurrent, 5000 req/sec]
+- **Sustained load**: [5000 concurrent for 24 hours]
+
+### Caching Strategy
+
+- **User profiles**: [Cache 1 hour, invalidate on update]
+- **Post lists**: [Cache 5 minutes, invalidate on new post]
+- **Cache hit target**: [80%+ hit rate]
+
+### Load Testing
+
+- **Tool**: [k6, JMeter, or Locust]
+- **Scenarios**: [Ramp-up, spike, sustained load]
+- **Acceptance criteria**: [p95 < 200ms, error rate < 0.1%]
+
+---
+
+## Security Hardening Plan *(new)*
+
+<!--
+   ACTION REQUIRED: Define security approach in detail.
+   See templates/security-plan-template.md for detailed guidance.
+-->
+
+### Authentication & Authorization
+
+- **Method**: [JWT, OAuth2, session cookies]
+- **Token expiration**: [15 min access, 7 day refresh]
+- **Roles**: [Admin, User, Guest]
+- **Per-role permissions**: [What each role can do]
+
+### Data Protection
+
+- **Encryption in transit**: [TLS 1.2+]
+- **Encryption at rest**: [AES-256]
+- **Secrets management**: [AWS Secrets Manager]
+- **Key rotation**: [Every 90 days]
+
+### Input Validation & Sanitization
+
+- **SQL injection prevention**: [Parameterized queries]
+- **XSS prevention**: [Input escaping, CSP headers]
+- **CSRF prevention**: [CSRF tokens]
+- **Rate limiting**: [5 failed logins per 15 min]
+
+### Compliance & Auditing
+
+- **Standards**: [GDPR, HIPAA, SOC2, PCI-DSS - if applicable]
+- **Audit logging**: [What events logged and retained]
+- **Data retention**: [How long to keep data]
+- **Right to be forgotten**: [Process to delete user data]
+
+### Vulnerability Management
+
+- **SAST scanning**: [SonarQube, Snyk on every commit]
+- **Dependency scanning**: [npm audit, pip audit]
+- **Penetration testing**: [Before launch]
+- **Incident response**: [Notification procedure, SLA]
+
+---
+
+## Testing Strategy *(new)*
+
+<!--
+   ACTION REQUIRED: Define comprehensive testing approach.
+   See templates/testing-strategy-template.md for detailed guidance.
+-->
+
+### Unit Tests
+
+- **Coverage target**: [80%+ of code]
+- **Framework**: [Jest, pytest, etc.]
+- **Critical paths**: [List functions that must have tests]
+
+### Integration Tests
+
+- **Scenarios**: [Component interactions, API calls]
+- **Database**: [Use test database with fixtures]
+- **Coverage**: [All APIs tested]
+
+### End-to-End Tests
+
+- **Critical journeys**: [User signup, login, create post]
+- **Tool**: [Cypress, Playwright, or Selenium]
+- **Browser coverage**: [Chrome, Firefox, Safari]
+- **Mobile testing**: [Responsive design on mobile]
+
+### Performance Testing
+
+- **Load test scenarios**: [Normal, spike, sustained]
+- **Tool**: [k6]
+- **Acceptance criteria**: [p95 < 200ms, error rate < 0.1%]
+- **Baseline**: [Compare against previous releases]
+
+### Security Testing
+
+- **Static analysis**: [SonarQube, Snyk]
+- **Dynamic analysis**: [OWASP ZAP]
+- **Penetration testing**: [Before launch]
+- **Dependency scanning**: [Every commit]
+
+### Accessibility Testing
+
+- **Standards**: [WCAG 2.1 Level AA]
+- **Automated**: [Axe, Lighthouse]
+- **Manual**: [Keyboard navigation, screen readers]
+
+### Regression Testing
+
+- **Suite**: [Unit + integration + E2E critical tests]
+- **Execution**: [On every commit, nightly full suite]
+- **Coverage**: [All features touched by change]
+
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*

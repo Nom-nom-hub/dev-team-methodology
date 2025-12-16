@@ -162,12 +162,120 @@ and delivers [specific value]"\]
 - **[Entity 1]**: [What it represents, key attributes without implementation] **[Team Validation]**
 - **[Entity 2]**: [What it represents, relationships to other entities] **[Team Validation]**
 
+## Non-Functional Requirements *(new)*
+
+<!--
+   ACTION REQUIRED: Define non-functional requirements.
+   These describe how the system should behave (performance, scalability, security, accessibility).
+   See templates/nfr-template.md for detailed guidance.
+-->
+
+### Performance & Scalability
+
+- **Response time targets**: [e.g., API p95 < 200ms, page load < 1s]
+- **Throughput targets**: [e.g., 1000 requests/sec, 1000 concurrent users]
+- **Scalability ceiling**: [e.g., must scale to 10,000 concurrent users]
+
+### Security & Compliance
+
+- **Data encryption**: [in transit and at rest requirements]
+- **Authentication**: [OAuth2, JWT, SAML, or other method]
+- **Compliance**: [GDPR, HIPAA, SOC2, PCI-DSS, or others]
+
+### Accessibility & Usability
+
+- **WCAG compliance level**: [A, AA, or AAA]
+- **Browser support**: [List minimum versions]
+- **Mobile responsiveness**: [Yes/No, which devices]
+
+### Reliability & Availability
+
+- **Target uptime**: [e.g., 99.9%, 99.99%]
+- **Recovery time objective (RTO)**: [e.g., < 1 hour]
+- **Recovery point objective (RPO)**: [e.g., < 5 minutes]
+
+---
+
+## Risks & Edge Cases *(new)*
+
+<!--
+   ACTION REQUIRED: Identify failure scenarios, edge cases, and risks.
+   See templates/risks-template.md for detailed guidance.
+-->
+
+### Failure Scenarios
+
+- **Scenario 1**: [What fails, probability, impact, mitigation]
+- **Scenario 2**: [e.g., "Database down: Probability High, Impact High, Mitigation: Replica ready"]
+
+### Edge Cases
+
+- **Empty state**: [e.g., "No data yet - show helpful message"]
+- **Max load**: [e.g., "1000+ concurrent users - paginate results"]
+- **Boundary conditions**: [e.g., "Very long input - truncate gracefully"]
+
+### Security Risks
+
+- **Authentication bypass**: [Mitigation: Use parameterized queries, validate inputs]
+- **Data exposure**: [Mitigation: Encrypt at rest and in transit]
+- **Injection attacks**: [Mitigation: Validate and sanitize all inputs]
+
+### Performance Risks
+
+- **N+1 queries**: [Load test with 100k records to verify]
+- **Memory leaks**: [Monitor memory over 24-hour soak test]
+- **Cache invalidation**: [Define cache TTLs and invalidation strategy]
+
+---
+
+## Constraints & Assumptions *(new)*
+
+<!--
+   ACTION REQUIRED: Document all constraints and assumptions.
+   See templates/constraints-template.md for detailed guidance.
+-->
+
+### Technology Constraints
+
+- **Allowed technologies**: [e.g., Python 3.11+, PostgreSQL, React 18+]
+- **Forbidden technologies**: [e.g., No PHP, No Internet Explorer support]
+- **Database requirements**: [e.g., PostgreSQL only, not MongoDB]
+
+### Legal & Compliance
+
+- **Data residency**: [e.g., EU data must stay in EU per GDPR]
+- **Industry standards**: [e.g., PCI-DSS if handling cards]
+- **Data retention**: [e.g., Delete after 30 days of inactivity]
+
+### Cost Constraints
+
+- **Infrastructure budget**: [e.g., < $5000/month]
+- **Third-party services**: [e.g., < $2000/month total]
+
+### Timeline & Team
+
+- **Hard deadline**: [e.g., Q2 2024 by June 30]
+- **Team size**: [e.g., 2 engineers, 1 designer]
+- **Skill gaps**: [e.g., No K8s experience]
+
+### Key Assumptions
+
+- **Assumption 1**: [e.g., "< 1TB data in year 1"]
+  - Impact if wrong: [e.g., "Scaling architecture might break"]
+  - Monitoring: [e.g., "Alert if data > 500GB"]
+
+- **Assumption 2**: [e.g., "Third-party API 99.9% uptime"]
+  - Impact if wrong: [e.g., "Can't meet our SLA"]
+  - Monitoring: [e.g., "Track API uptime weekly"]
+
+---
+
 ## Success Criteria *(mandatory)*
 
 <!--
-  ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
-  Include team perspectives on success criteria.
+   ACTION REQUIRED: Define measurable success criteria.
+   These must be technology-agnostic and measurable.
+   Include team perspectives on success criteria.
 -->
 
 ### Measurable Outcomes

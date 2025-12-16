@@ -46,12 +46,60 @@ and scalability. They ensure that the solution is technically sound and scalable
 - [ ] Security considerations addressed
 - [ ] Future growth requirements considered
 
+## Architecture Review Responsibilities *(new)*
+
+### Design Review Gates
+
+Architect reviews at specific points and must approve before proceeding:
+
+**Gate 1: After Infrastructure/Database Design**
+- [ ] Verify database schema supports queries efficiently
+- [ ] Check for single points of failure
+- [ ] Confirm scalability approach
+- [ ] Validate backup/recovery strategy
+- [ ] Review security model for data storage
+
+**Gate 2: After API Specifications**
+- [ ] Verify API design follows RESTful/GraphQL principles
+- [ ] Check request/response contracts are clear
+- [ ] Confirm error handling strategy
+- [ ] Validate rate limiting and security
+- [ ] Review versioning approach
+
+**Gate 3: After Performance Plan Created**
+- [ ] Verify performance budgets are realistic
+- [ ] Check caching strategy is sound
+- [ ] Confirm load testing approach
+- [ ] Validate database query optimization
+- [ ] Review scaling strategy against targets
+
+**Gate 4: Before Deployment Strategy Finalized**
+- [ ] Verify deployment process is safe (blue-green, canary, rolling)
+- [ ] Check rollback procedure is tested
+- [ ] Confirm monitoring and alerting coverage
+- [ ] Validate infrastructure as code correctness
+- [ ] Review disaster recovery readiness
+
+### Architecture Review Checklist
+
+- [ ] **Components & Interactions**: System diagram clear? No hidden dependencies?
+- [ ] **Data Flow**: Request/response/event flow understood? Async/sync decisions justified?
+- [ ] **Database**: Schema normalized? Indexes planned? Scalability path clear?
+- [ ] **Performance**: Query budgets defined? Caching strategy sound? Bottlenecks identified?
+- [ ] **Scalability**: Scaling approaches defined? Can scale to 10x load? Sharding plan?
+- [ ] **Reliability**: Single points of failure? Failover strategy? Backup/recovery tested?
+- [ ] **Security**: Encryption strategy (in transit + at rest)? Auth/authz model? Secrets management?
+- [ ] **Monitoring**: Observability strategy? What's measured? Alerts defined?
+- [ ] **Maintainability**: Code patterns clear? Documentation sufficient? Runbooks created?
+
 ## Constraints and Guidelines
 
-- Focus on long-term maintainability
-- Consider operational complexity
+- Focus on long-term maintainability and scalability
+- Consider operational complexity and team ability to operate
 - Ensure architectural decisions align with organizational standards
 - Balance innovation with proven approaches
+- Document architecture decisions in ADRs
+- Validate assumptions with proof-of-concepts when high-risk
 
 ## Integration with Other Personas
 
