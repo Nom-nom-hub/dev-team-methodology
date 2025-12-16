@@ -1,5 +1,9 @@
 <h1>👥 Professional Dev Team Methodology</h1>
 
+<p align="center">
+    <img src="media/DTM.png" alt="Dev Team Methodology Logo" width="200"/>
+</p>
+
 <h3><em>Build high-quality software with structured team collaboration.</em></h3>
 
 <p align="center">
